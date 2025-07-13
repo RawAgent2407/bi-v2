@@ -1,0 +1,12 @@
+@media (min-width: 680px) and (max-width: 1280px) {
+  .first-slide-margin {
+    margin-left: 2.5rem !important;
+  }
+}
+
+@media (width >= 1280px) {
+  .large-btn-flex {
+    width: fit-content !important;
+    min-width: 160px;
+  }
+}

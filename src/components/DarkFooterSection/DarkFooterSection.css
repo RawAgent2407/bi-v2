@@ -1,0 +1,8 @@
+.dark-footer-wrapper * {
+  background: #000 !important;
+  color: #fff !important;
+}
+.dark-footer-wrapper {
+  background: #000 !important;
+  /* border: 5px solid red; */
+}
