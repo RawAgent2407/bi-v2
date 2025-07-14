@@ -27,10 +27,10 @@ const blogPosts = [
 
 const InvestingCardsSection = () => {
   return (
-    <section className="sm:px-6 lg:px-32 lg:pb-20 lg:pt-0 sm:py-14 bg-white">
+    <section className="sm:px-6 lg:px-32 lg:pb-20 lg:pt-0 sm:py-14 mob:px-10 mob:my-10 bg-white">
       <div className="w-full mx-auto">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:mb-10 sm:gap-0 lg:px-12 lg:mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:mb-10 sm:gap-0 lg:px-12 lg:mb-8 mob:pb-5">
           <h2 className="text-[1.75rem] leading-[2.25rem] tracking-[0.01em] font-[Onest] font-semibold capitalize text-[#171A20]">
             Smart Living, Smarter Investing
           </h2>
@@ -55,7 +55,7 @@ const InvestingCardsSection = () => {
               </div>
 
               {/* Content */}
-              <div className="lg:py-3 lg:px-1 sm:p-4 space-y-1 sm:space-y-2">
+              <div className="lg:py-3 lg:px-1 sm:p-4 space-y-1 sm:space-y-2 mob:pt-2">
                 <p className="text-[1.125rem] leading-[1.5rem] tracking-[0em] font-[Arial] font-normal text-[#0A0A0A] align-middle">
                   {post.title}
                 </p>

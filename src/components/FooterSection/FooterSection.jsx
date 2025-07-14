@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom' // Import Link
 
 const FooterSection = () => {
   return (
-    <footer className="lg:pt-20  text-sm text-gray-500 font-sans sm:px-16 sm:py-5 sm:pb-20">
+    <footer className="lg:pt-20  text-sm text-gray-500 font-sans lg:px-0 sm:px-16 sm:py-5 sm:pb-20 mob:px-10 mob:pt-0 mob:pb-10">
       <div className="flex flex-col gap-14">
         {/* Top Row: Logo and Socials */}
         <div className="flex justify-between  items-start flex-col sm:flex-row gap-4">
@@ -119,8 +119,10 @@ const FooterSection = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-row flex-wrap justify-between items-center  text-xs text-gray-800 gap-y-2">
-          <p>© Build India Reality 2025</p>
-          <div className="flex gap-4 flex-wrap">
+          <p className="mob:text-center mob:w-full">
+            © Build India Reality 2025
+          </p>
+          <div className="flex gap-4 flex-wrap mob:justify-between mob:w-full mob:pt-4">
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Cookies</a>

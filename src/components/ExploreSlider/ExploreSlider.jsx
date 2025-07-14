@@ -1,110 +1,103 @@
 import React, { useState, useEffect } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
 import exploreData from '../../data/exploreData'
 import Button from '../Button'
 import './ExploreSlider.css'
 
 const ExploreSlider = () => {
-  const [slidesToShow, setSlidesToShow] = useState(1)
-  const [spaceBetween, setSpaceBetween] = useState(0)
+  const [spacing, setSpacing] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [sliderKey, setSliderKey] = useState(0)
 
+  // Handle spacing responsively
   useEffect(() => {
-    const updateSlides = () => {
+    const updateSpacing = () => {
       const width = window.innerWidth
-      setSlidesToShow(width < 768 ? 1 : 1.4)
-      setSpaceBetween(width >= 1280 ? 32 : 0)
+
+      if (width < 640) {
+        setSpacing(12) // Mobile
+      } else if (width < 1280) {
+        setSpacing(22) // Small
+      } else {
+        setSpacing(32) // Large
+      }
+
+      setSliderKey((prev) => prev + 1) // Force re-init
     }
 
-    updateSlides() // set on initial render
-    window.addEventListener('resize', updateSlides)
-    return () => window.removeEventListener('resize', updateSlides)
+    updateSpacing()
+    window.addEventListener('resize', updateSpacing)
+    return () => window.removeEventListener('resize', updateSpacing)
   }, [])
+
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: false,
+    slides: {
+      perView: 1,
+      spacing,
+      origin: 'center',
+    },
+    slideChanged(s) {
+      setCurrentSlide(s.track.details.rel)
+    },
+  })
+
   return (
-    <div className="w-full mx-auto sm:p-10 lg:p-14 lg:px-0 sm:px-0 lg:pt-12 lg:pb-0 explore-slider ">
-      <Swiper
-        spaceBetween={spaceBetween}
-        slidesPerView={slidesToShow}
-        // centeredSlides={true}
-        // breakpoints={{
-        //   640: {
-        //     slidesPerView: 1.2,
-        //     centeredSlides: false,
-        //   },
-        //   768: {
-        //     slidesPerView: 1.4,
-        //   },
-        //   1024: {
-        //     slidesPerView: 1.2,
-        //   },
-        //   1280: {
-        //     slidesPerView: 1,
-        //   },
-        // }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="w-full"
-      >
-        {exploreData.map((item, idx) => (
-          <SwiperSlide
+    <div className="w-full mob:px-5 sm:px-10  lg:px-20 py-10 explore-slider ">
+      <div key={sliderKey} ref={sliderRef} className="keen-slider swiper-fix">
+        {exploreData.map((item) => (
+          <div
             key={item.id}
-            className={idx === 0 ? 'first-slide-margin' : ''}
+            className="keen-slider__slide rounded-lg overflow-hidden relative group aspect-square sm:aspect-auto sm:h-[400px] lg:h-[498px] w-full mob:h-[400px] shadow-lg"
           >
-            <div
-              className="relative group aspect-square sm:aspect-auto sm:h-[400px] sm:w-[520px] lg:ml-8 sm:ml-5 
-              lg:h-[498px] lg:w-[100%] rounded-lg overflow-hidden shadow-lg sm:rounded-lg"
-            >
-              {/* Image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b lg:from-black/10 lg:to-black/50 sm:from-black/30 sm:to-black/30" />
-
-              <p className="absolute lg:top-[2.5rem] lg:left-[2.5rem] sm:top-[1.5rem] sm:left-[1.5rem]  text-white text-[1.5rem] leading-[1.75rem] tracking-[-0.02em] font-medium font-[Inter]">
-                {item.category}
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b lg:from-black/10 lg:to-black/50 sm:from-black/30 sm:to-black/30 mob:from-black/40 mob:to-black/40" />
+            <p className="absolute lg:top-[2.5rem] lg:left-[2.5rem] sm:top-[1.5rem] sm:left-[1.5rem] mob:top-[20px] mob:left-[20px] text-white text-[1.5rem] leading-[1.75rem] tracking-[-0.02em] font-medium font-[Inter] mob:text-[1.2rem] mob:leading-[1.4rem]">
+              {item.category}
+            </p>
+            <div className="absolute bottom-0 left-0 right-0 lg:p-[2.5rem] sm:p-[1.5rem] text-white flex flex-col lg:gap-[0.75rem] sm:gap-[0.25rem] mob:p-[20px] mob:gap-[0.5rem] mob:text-[20px] mob:leading-[32px] mob:font-[Onest] mob:font-normal">
+              <h3 className="lg:text-[2rem] lg:leading-[2.5rem] lg:tracking-[0.01em] sm:text-[1.5rem] sm:leading-[2rem] sm:tracking-[0.01em] capitalize font-[Onest] font-semibold text-[#F7F7F7] sm:font-archivo sm:font-medium sm:text-[24px] sm:leading-[28px] sm:tracking-[0.02em] sm:align-middle">
+                {item.title}
+              </h3>
+              <p className="text-[0.875rem] sm:text-[1rem] leading-[1.5rem] font-normal font-[Onest] text-white sm:w-[50%]">
+                {item.subtitle}
               </p>
-              {/* Content Area */}
-              <div className="absolute bottom-0 left-0 right-0 lg:p-[2.5rem] sm:p-[1.5rem] text-white flex flex-col lg:gap-[0.75rem] sm:gap-[0.25rem]">
-                {/* Category Tag */}
-
-                {/* Title */}
-                <h3 className="lg:text-[2rem] lg:leading-[2.5rem] lg:tracking-[0.01em] sm:text-[1.5rem] sm:leading-[2rem] sm:tracking-[0.01em] capitalize font-[Onest] font-semibold text-[#F7F7F7] sm:font-archivo sm:font-medium sm:text-[24px] sm:leading-[28px] sm:tracking-[0.02em] sm:align-middle">
-                  {item.title}
-                </h3>
-
-                {/* Subtitle */}
-                <p className="text-[0.875rem] sm:text-[1rem] leading-[1.5rem] font-normal font-[Onest] text-white sm:w-[50%]">
-                  {item.subtitle}
-                </p>
-
-                {/* Buttons */}
-                <div className="flex flex-col sm:flex-row gap-[0.75rem] mt-2 large-btn-flex">
-                  <Button
-                    variant="dark"
-                    className="shadow-md lg:w-fit sm:flex-1 large-btn-flex"
-                  >
-                    Explore More
-                  </Button>
-                  <Button
-                    variant="light"
-                    className="shadow-md lg:w-fit sm:flex-1 large-btn-flex"
-                  >
-                    Contact us
-                  </Button>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-[0.75rem] mt-2  mob:flex-row mob:gap-[0.5rem] mob:mt-1  ">
+                <Button
+                  variant="dark"
+                  className="shadow-md lg:w-fit sm:flex-1 large-btn-flex"
+                >
+                  Explore More
+                </Button>
+                <Button
+                  variant="light"
+                  className="shadow-md lg:w-fit sm:flex-1 large-btn-flex "
+                >
+                  Contact us
+                </Button>
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
+
+      {/* Pagination */}
+      <div className="custom-pagination mt-6 sm:mt-8 flex justify-center gap-2">
+        {exploreData.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => instanceRef.current?.moveToIdx(index)}
+            className={`w-2.5 h-2.5 rounded-full ${
+              currentSlide === index ? 'bg-black' : 'bg-gray-300'
+            }`}
+          ></button>
+        ))}
+      </div>
     </div>
   )
 }

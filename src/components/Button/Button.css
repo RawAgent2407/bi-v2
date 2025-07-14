@@ -98,3 +98,13 @@
     width: max-content !important;
   }
 }
+
+@media (width < 680px) {
+  .custom-button {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    letter-spacing: 0em;
+    width: fit-content !important;
+    padding: 0.4rem 0.8rem;
+  }
+}

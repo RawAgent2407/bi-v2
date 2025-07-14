@@ -53,12 +53,17 @@ const FutureHomeSection = () => {
     lg:text-xl font-heading font-regular text-black
     lg:h-[3.375rem] lg:pt-[1rem] lg:pb-[0.5rem]
     sm:text-2xl  sm:h-[2.375rem] sm:pt-[0.5rem] sm:pb-[0.25rem]
+    mob:text-2xl mob:h-[2.375rem] mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4
   "
               >
                 {item.title}
               </h2>
 
-              <p className="text-[0.875rem] leading-[1.25rem] tracking-[0.02em] text-gray-700 font-[Onest] font-normal capitalize lg:w-2/3 sm:font-onest sm:font-normal sm:text-[14px] sm:leading-[20px] sm:tracking-[0.02em] sm:capitalize">
+              <p
+                className="text-[0.875rem] leading-[1.25rem] tracking-[0.02em] text-gray-700 font-[Onest] font-normal capitalize lg:w-2/3 sm:font-onest sm:font-normal sm:text-[14px] sm:leading-[20px] sm:tracking-[0.02em] sm:capitalize
+              mob:text-[14px] mob:leading-[20px] mob:tracking-[0.02em] mob:capitalize  mob:px-5
+              "
+              >
                 {item.description}
               </p>
             </div>
@@ -84,22 +89,22 @@ const FutureHomeSection = () => {
         {/* Tabs Controlled Section */}
         <div className="space-y-6">
           {/* Heading + Description (Power Earth block reused here) */}
-          <div className="flex flex-col sm:px-12 lg:flex-row lg:items-start lg:justify-between gap-8">
+          <div className="flex flex-col sm:px-12 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
             <h2
               className="
-    text-xl font-heading font-regular text-black
-    w-[8.1875rem] h-[3.375rem] pt-[1rem] pb-[0.5rem]
+    lg:text-xl font-heading font-regular text-black
+    lg:h-[3.375rem] lg:pt-[1rem] lg:pb-[0.5rem]
+    sm:text-2xl  sm:h-[2.375rem] sm:pt-[0.5rem] sm:pb-[0.25rem]
+    mob:text-2xl mob:h-[2.375rem] mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4
   "
             >
               {' '}
               Power Earth
             </h2>
             <p
-              className="
-    text-[0.875rem] leading-[1.25rem] tracking-[0.02em]
-    text-gray-700 font-[Onest] font-normal capitalize
-    lg:w-2/3
-  "
+              className="text-[0.875rem] leading-[1.25rem] tracking-[0.02em] text-gray-700 font-[Onest] font-normal capitalize lg:w-2/3 sm:font-onest sm:font-normal sm:text-[14px] sm:leading-[20px] sm:tracking-[0.02em] sm:capitalize
+              mob:text-[14px] mob:leading-[20px] mob:tracking-[0.02em] mob:capitalize  mob:px-5
+              "
             >
               {' '}
               We design sustainable systems that are massively
@@ -121,17 +126,17 @@ const FutureHomeSection = () => {
           </div>
 
           {/* Tabs */}
-          <div className="sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-4 lg:gap-8 sm:pb-5">
+          <div className="mob:flex mob:overflow-x-auto mob:gap-5 sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-4 lg:gap-8 sm:pb-5 mob:pb-5 mob:px-5">
             {bottomTabs.map((item, idx) => {
               const isActive = idx === activeTab
               return (
                 <div
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className="cursor-pointer transition-all duration-200 group sm:min-w-[280px] lg:min-w-0"
+                  className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0 "
                 >
                   <h3
-                    className={`text-sm sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${
+                    className={`text-xs  mob:text-lg sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${
                       isActive
                         ? 'text-black border-black'
                         : 'text-gray-400 border-gray-300 group-hover:text-black group-hover:border-black'
@@ -140,7 +145,7 @@ const FutureHomeSection = () => {
                     {item.title}
                   </h3>
                   <p
-                    className={`text-xs sm:text-sm font-sans ${
+                    className={`text-[11px] mob:text-xs sm:text-sm font-sans ${
                       isActive
                         ? 'text-gray-700'
                         : 'text-gray-400 group-hover:text-gray-700'

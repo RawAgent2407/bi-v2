@@ -10,8 +10,8 @@ const Nav = () => {
   const location = useLocation() // Get current location
 
   return (
-    <nav className="bg-white shadow-sm font-sans sticky top-0 z-50 nav-custom-padding">
-      <div className=" mx-auto lg:px-16 lg:px-6 ">
+    <nav className="bg-white  shadow-sm font-sans sticky top-0 z-50 nav-custom-padding">
+      <div className=" mx-auto lg:px-16 lg:px-6 mob:py-1 mob:px-4 ">
         <div className="relative flex items-center justify-between h-16">
           {/* Left: Logo */}
           <div className="flex-shrink-0">

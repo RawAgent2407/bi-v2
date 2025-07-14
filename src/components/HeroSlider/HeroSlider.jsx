@@ -10,7 +10,7 @@ import Button from '../Button'
 import { Pagination } from 'swiper/modules'
 const HeroSlider = () => {
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden hero-slider">
+    <div className="relative w-full lg:h-[80vh] mob:h-[95vh] sm:h-[90vh] overflow-hidden hero-slider">
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
         navigation={{
@@ -63,9 +63,13 @@ const HeroSlider = () => {
               <div className="absolute inset-0 bg-black/50" />
 
               <div
-                className="absolute inset-0 flex flex-col lg:justify-center lg:items-center text-center px-4 sm:px-6 sm:justify-end sm:items-start sm:pb-40 
+                className="absolute inset-0 flex flex-col 
+                lg:justify-center lg:items-center text-center px-4 
+                sm:px-6 sm:justify-end sm:items-start sm:pb-40 
                 sm:gap-2 sm:pl-12
-               custom-up-gap
+                custom-up-gap
+                mob:p-6
+                mob:gap-2
                 lg:px-8"
               >
                 <h2
@@ -74,6 +78,8 @@ const HeroSlider = () => {
     text-[2.75rem] leading-[3rem] tracking-[0em]
     font-[Archivo] font-normal
     mb-4 lg:w-[30%]
+    mob:text-[2.5rem]
+    mob:text-left
   "
                 >
                   {slide.title}
@@ -85,6 +91,8 @@ const HeroSlider = () => {
     text-[0.875rem] leading-[1.25rem] tracking-[0.02em]
     text-white max-w-2xl mb-6
  sm:text-left
+  mob:text-[0.9rem]
+    mob:text-left
     "
                 >
                   {slide.subtitle}
