@@ -34,8 +34,12 @@ const Nav = () => {
                 to="/projects"
                 isActive={location.pathname === '/projects'}
               />{' '}
+              <NavLink
+                text="About"
+                to="/about"
+                isActive={location.pathname === '/about'}
+              />{' '}
               {/* Use to prop and check location */}
-              <NavLink text="Catalog" to="#" /> {/* Keep as # for now */}
               <NavLink
                 text="Blogs"
                 to="/blog"
@@ -97,8 +101,12 @@ const Nav = () => {
               to="/projects"
               isActive={location.pathname === '/projects'}
             />{' '}
+            <MobileNavLink
+              text="About"
+              to="/about"
+              isActive={location.pathname === '/about'}
+            />{' '}
             {/* Use to prop and check location */}
-            <MobileNavLink text="Catalog" to="#" /> {/* Keep as # for now */}
             <MobileNavLink
               text="Blogs"
               to="/blog"

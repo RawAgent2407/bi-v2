@@ -15,10 +15,10 @@ const VisionSection = () => {
 
       {/* Text content */}
       <div className="absolute bottom-6 sm:bottom-14 left-4 sm:left-10 z-20 max-w-[90%] sm:max-w-2xl">
-        <h2 className="text-white text-base sm:text-lg font-heading font-semibold mb-2">
+        <h2 className="text-white text-base sm:text-lg font-heading font-semibold mb-2 mob:text-2xl">
           Where Vision Meets Precision
         </h2>
-        <p className="text-white text-xs sm:text-sm font-sans leading-relaxed pr-2 sm:pr-10">
+        <p className="text-white text-xs sm:text-sm font-sans leading-relaxed pr-2 sm:pr-10 mob:text-sm mob:bottom-1 mob:border-b mob:border-white mob:pb-4">
           The iconic triple-tower entrance and grand central boulevard of
           Rajpath Enclave make a lasting first impression. Designed with
           symmetry, elegance, and smart engineering, it leads to a clubhouse

@@ -11,8 +11,10 @@ function Blog() {
       <Nav />
       <BlogHero />
       <BlogGrid />
-      <ContactSection />
-      <FooterSection />
+      <section className="footer-wrapper ">
+        <ContactSection />
+        <FooterSection />
+      </section>
     </div>
   )
 }

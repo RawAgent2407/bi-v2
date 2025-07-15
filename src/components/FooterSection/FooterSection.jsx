@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom' // Import Link
 
 const FooterSection = () => {
   return (
-    <footer className="lg:pt-20  text-sm text-gray-500 font-sans lg:px-0 sm:px-16 sm:py-5 sm:pb-20 mob:px-10 mob:pt-0 mob:pb-10">
+    <footer className="lg:pt-20  text-sm text-gray-500 font-sans  sm:px-10 sm:py-5 sm:pb-20 mob:px-5 mob:pt-0 mob:pb-10">
       <div className="flex flex-col gap-14">
         {/* Top Row: Logo and Socials */}
         <div className="flex justify-between  items-start flex-col sm:flex-row gap-4">
@@ -40,7 +40,9 @@ const FooterSection = () => {
                 </li>
                 <li>Properties</li>
                 <li>Services</li>
-                <li>About Us</li>
+                <li>
+                  <Link to="/about">About Us</Link>
+                </li>
                 <li>
                   <Link to="/blog">Blog</Link>
                 </li>
@@ -86,7 +88,9 @@ const FooterSection = () => {
               </li>
               <li>Properties</li>
               <li>Services</li>
-              <li>About Us</li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
               <li>
                 <Link to="/blog">Blog</Link>
               </li>

@@ -2,12 +2,28 @@ import React from 'react'
 
 const BlogHero = () => {
   return (
-    <section className="h-[50vh] w-full flex items-center justify-center bg-white px-4 sm:px-8 lg:px-16">
-      <div className="max-w-3xl text-left">
-        <p className="text-xs font-medium tracking-wide text-gray-700 mb-4">
+    <section className="h-[50vh] w-full flex items-center justify-center bg-white px-4 sm:px-10 lg:px-16 mob:px-5 sm:px-10">
+      <div className=" text-left w-full">
+        <p
+          className="  lg:text-left capitalize font-[Onest] font-normal
+    text-[0.875rem] leading-[1.25rem] tracking-[0.02em]
+    text-[#171A20]  mb-6
+ sm:text-left
+  mob:text-[0.9rem]
+    mob:text-left"
+        >
           Build India Blog
         </p>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-gray-900">
+        <h1
+          className="   lg:text-left align-middle text-[#2D2C2C]
+    text-[2.75rem] leading-[3rem] tracking-[0em]
+    font-[Archivo] font-normal
+    mb-4 
+    mob:text-[2.5rem]
+    mob:text-left
+    sm:text-left
+    "
+        >
           The thinking, ideas
           <br />
           and technology

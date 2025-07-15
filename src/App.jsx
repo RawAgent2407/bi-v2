@@ -6,6 +6,7 @@ import './App.css' // Keep your App-specific styles if needed
 import Blog from './pages/blog/blog'
 import { SingleBlog } from './components/blogGrid/blogGrid'
 import blogsData from './data/blogsData'
+import About from './pages/About/About'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           path="/blog/:id"
           element={<SingleBlog blogsData={blogsData} />}
         />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   )

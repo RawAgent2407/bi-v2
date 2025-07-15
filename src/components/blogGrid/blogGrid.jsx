@@ -175,8 +175,8 @@ const BlogGrid = () => {
   }, [])
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-20 py-10 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+    <section className="w-full px-4 sm:px-10 lg:px-20 py-10 bg-white mob:px-5 mob:py-10 sm:px-10">
+      <div className="mx-auto flex flex-col lg:flex-row gap-10">
         {/* Left Sticky Tags */}
         <aside className="lg:w-1/5 w-full">
           <div className="lg:sticky top-20">

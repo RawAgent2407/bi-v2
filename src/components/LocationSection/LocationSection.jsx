@@ -3,7 +3,7 @@ import projectImg from '../../assets/map.png'
 
 const LocationSection = () => {
   return (
-    <section className="bg-white mob:px-10 sm:px-12 lg:px-36 lg:pb-20">
+    <section className="bg-white mob:px-5 sm:px-12 lg:px-36 lg:pb-20 ">
       <div className=" mx-auto space-y-10">
         {/* Heading for small screens */}
         <h2 className="block lg:hidden text-[1.25rem] mob:text-[1.35rem] leading-[1.75rem] font-[Archivo] font-medium text-gray-900 sm:text-[24px] sm:leading-[28px]">

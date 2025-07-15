@@ -26,29 +26,29 @@ const TabsSection = () => {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="bg-black px-4 py-10 sm:px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto space-y-10">
+    <section className="bg-black sm:px-0 lg:px-36 lg:py-20 sm:py-10">
+      <div className="w-full mx-auto space-y-10">
         {/* Image Section */}
-        <div className="overflow-hidden rounded-lg">
+        <div className="overflow-hidden lg:rounded-lg h-[300px] sm:h-[400px] md:h-[500px]">
           <img
             src={tabData[activeTab].image}
             alt={tabData[activeTab].title}
-            className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
 
         {/* Tabs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 border-t border-gray-800 ">
+        <div className="mob:flex mob:overflow-x-auto mob:gap-5 sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-3 lg:gap-8 sm:pb-5 mob:pb-5 mob:px-5 sm:px-12">
           {tabData.map((item, index) => {
             const isActive = index === activeTab
             return (
               <div
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`cursor-pointer transition-all duration-200 group`}
+                className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0"
               >
                 <h3
-                  className={`text-sm sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${
+                  className={`text-sm mob:text-lg sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${
                     isActive
                       ? 'text-white border-white'
                       : 'text-gray-400 border-gray-600 group-hover:text-white group-hover:border-white'
@@ -57,7 +57,7 @@ const TabsSection = () => {
                   {item.title}
                 </h3>
                 <p
-                  className={`text-xs sm:text-sm font-sans ${
+                  className={`text-xs mob:text-sm sm:text-sm font-sans ${
                     isActive
                       ? 'text-white'
                       : 'text-gray-500 group-hover:text-gray-300'
