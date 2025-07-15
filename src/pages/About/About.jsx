@@ -17,7 +17,7 @@ const About = () => {
       <VisionSection />
       <AboutImgs />
       <ExploreSlider />
-      <section className="footer-wrapper ">
+      <section className="footer-wrapper lg:pt-20   lg:p-20">
         <ContactSection />
         <FooterSection />
       </section>

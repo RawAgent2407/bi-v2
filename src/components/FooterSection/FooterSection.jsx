@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom' // Import Link
 
 const FooterSection = () => {
   return (
-    <footer className="lg:pt-20  text-sm text-gray-500 font-sans  sm:px-10 sm:py-5 sm:pb-20 mob:px-5 mob:pt-0 mob:pb-10">
+    <footer className="lg:pt-20  text-sm text-gray-500 font-sans lg:px-16 sm:px-10 sm:py-5 sm:pb-20 mob:px-5 mob:pt-0 mob:pb-10">
       <div className="flex flex-col gap-14">
         {/* Top Row: Logo and Socials */}
         <div className="flex justify-between  items-start flex-col sm:flex-row gap-4">

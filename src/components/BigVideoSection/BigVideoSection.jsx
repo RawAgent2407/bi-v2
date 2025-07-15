@@ -14,13 +14,10 @@ const BigVideoSection = () => {
       <div className="absolute inset-0 z-10 hidden sm:block bg-black/20 lg:bg-gradient-to-t lg:from-black/30 lg:via-transparent lg:to-transparent" />
 
       {/* Hero heading and explore btn (hidden on mobile) */}
-      <div className="absolute top-0 left-0 right-0 flex-col z-20 hidden mob:hidden sm:flex items-center justify-center pt-[10vh] gap-4 px-4">
+      <div className="absolute top-0 left-0 right-0 flex-col z-20 hidden mob:hidden sm:flex items-center justify-center pt-[10vh] gap-4 px-4 ">
         <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-semibold text-center">
           Live Smart. Live Green.
         </h2>
-        <Button variant="light" className="px-6 py-2 text-sm sm:text-base">
-          Explore More
-        </Button>
       </div>
 
       {/* Play Button - bottom left */}
@@ -35,7 +32,7 @@ const BigVideoSection = () => {
 
       {/* Contact Form sits on same background */}
       <div className="relative z-20">
-        <div className="flex lg:p-16 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-16 sm:py-10 sm:pt-52 mob:px-5 mob:pt-10 mob:pb-14 mob:flex-col-reverse">
+        <div className="flex lg:p-32 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-16 sm:py-10 sm:pt-52 mob:px-5 mob:pt-10 mob:pb-14 mob:flex-col-reverse">
           {/* Left Info */}
           <div
             className="sm:p-10 lg:p-12 lg:p-20 lg:space-y-8 border-b md:border-b-0 lg:border-r lg:w-2/5 sm:w-full sm:bg-white mob:bg-white sm:p-20 mob:p-8 sm:gap-8 sm:flex sm:flex-col sm:items-start sm:justify-start mob:p-5 mob:gap-6 mob:flex mob:flex-col mob:items-start"

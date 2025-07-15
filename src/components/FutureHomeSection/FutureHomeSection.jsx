@@ -47,7 +47,7 @@ const FutureHomeSection = () => {
         {/* Static Cards */}
         {cardData.map((item, idx) => (
           <div key={idx} className="space-y-8">
-            <div className="flex flex-col sm:px-12 lg:flex-row lg:items-center lg:justify-between lg:gap-8 sm:gap-2">
+            <div className="flex flex-col sm:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8 sm:gap-2 lg:px-0 sm:px-10 mob:px-5">
               <h2
                 className="
     lg:text-xl font-heading font-regular text-black
@@ -89,7 +89,7 @@ const FutureHomeSection = () => {
         {/* Tabs Controlled Section */}
         <div className="space-y-6">
           {/* Heading + Description (Power Earth block reused here) */}
-          <div className="flex flex-col sm:px-12 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
+          <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-5">
             <h2
               className="
     lg:text-xl font-heading font-regular text-black
@@ -133,7 +133,7 @@ const FutureHomeSection = () => {
                 <div
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0 "
+                  className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0 lg:px-0 sm:px-10 mob:px-5"
                 >
                   <h3
                     className={`text-xs  mob:text-lg sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${

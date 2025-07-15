@@ -30,7 +30,7 @@ const InvestingCardsSection = () => {
     <section className="sm:px-12 lg:px-36 lg:pb-20 lg:pt-0 sm:py-14 mob:px-5 mob:my-10 bg-white">
       <div className="w-full mx-auto">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:mb-10 sm:gap-0 lg:px-12 lg:mb-8 mob:pb-5">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:mb-10 sm:gap-0 lg:px-0 lg:mb-8 mob:pb-5">
           <h2 className="text-[1.75rem] leading-[2.25rem] tracking-[0.01em] font-[Onest] font-semibold capitalize text-[#171A20]">
             Smart Living, Smarter Investing
           </h2>

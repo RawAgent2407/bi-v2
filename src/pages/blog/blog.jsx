@@ -11,7 +11,7 @@ function Blog() {
       <Nav />
       <BlogHero />
       <BlogGrid />
-      <section className="footer-wrapper ">
+      <section className="footer-wrapper lg:pt-20   lg:p-20">
         <ContactSection />
         <FooterSection />
       </section>

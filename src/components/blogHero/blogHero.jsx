@@ -3,7 +3,7 @@ import React from 'react'
 const BlogHero = () => {
   return (
     <section className="h-[50vh] w-full flex items-center justify-center bg-white px-4 sm:px-10 lg:px-16 mob:px-5 sm:px-10">
-      <div className=" text-left w-full">
+      <div className=" text-left w-fit ">
         <p
           className="  lg:text-left capitalize font-[Onest] font-normal
     text-[0.875rem] leading-[1.25rem] tracking-[0.02em]
