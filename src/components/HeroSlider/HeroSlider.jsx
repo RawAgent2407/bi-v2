@@ -10,7 +10,7 @@ import Button from '../Button'
 import { Pagination } from 'swiper/modules'
 const HeroSlider = () => {
   return (
-    <div className="relative w-full lg:h-[80vh] mob:h-[95vh] sm:h-[90vh] overflow-hidden hero-slider">
+    <div className="relative w-full lg:h-[80dvh] mob:h-[100dvh] sm:h-[100dvh] overflow-hidden hero-slider">
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
         navigation={{

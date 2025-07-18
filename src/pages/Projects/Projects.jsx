@@ -21,7 +21,7 @@ function Projects() {
       <BigImgSection />
       <FutureHomeSection />
       <BigVideoSection />
-      <section className="footer-wrapper">
+      <section className="footer-wrapper lg:pt-20 dark-footer-wrapper   lg:p-20">
         <DarkFooterSection />
       </section>
     </>

@@ -7,7 +7,7 @@ import { FaHouseUser } from 'react-icons/fa6'
 const ProjectHero = () => {
   return (
     <section
-      className="relative w-full lg:h-[92vh] mob:h-[82vh] sm:h-[94vh] bg-cover bg-center text-white flex items-center justify-center"
+      className="relative w-full lg:h-[100dvh] mob:h-[100dvh] sm:h-[100dvh] bg-cover bg-center text-white flex items-center justify-center"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
       {/* Dark Overlay */}
@@ -38,7 +38,7 @@ const ProjectHero = () => {
       </div>
 
       {/* Stats: Bottom Centered */}
-      <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 w-full max-w-xs sm:max-w-md px-4 z-10 mob:bottom-10 mob:w-full mob:px-0">
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 w-full  px-4 z-10 mob:bottom-10 mob:w-full mob:px-0">
         <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
           <div className="flex flex-col items-center gap-1">
             {/* <FiUsers className="text-white text-2xl sm:text-3xl" /> */}
@@ -52,7 +52,7 @@ const ProjectHero = () => {
 
   mob:text-[0.9rem]"
             >
-              Skilled Professionals
+              Skilled <br /> Professionals
             </span>
           </div>
           <div className="flex flex-col items-center gap-1">
@@ -67,7 +67,7 @@ const ProjectHero = () => {
   mob:text-[0.9rem]"
             >
               {' '}
-              Unified Vision & Mission
+              Unified <br /> Vision & Mission
             </span>
           </div>
           <div className="flex flex-col items-center gap-1">
@@ -83,7 +83,7 @@ const ProjectHero = () => {
   mob:text-[0.9rem]"
             >
               {' '}
-              Families Registered
+              Families <br /> Registered
             </span>
           </div>
         </div>

@@ -44,7 +44,7 @@ const ExploreSlider = () => {
   })
 
   return (
-    <div className="w-full mob:px-5 sm:px-10  lg:px-20 py-10 explore-slider ">
+    <div className="w-full mob:px-5 sm:px-10  lg:px-36 py-10 explore-slider ">
       <div key={sliderKey} ref={sliderRef} className="keen-slider swiper-fix">
         {exploreData.map((item) => (
           <div
@@ -67,16 +67,16 @@ const ExploreSlider = () => {
               <p className="text-[0.875rem] sm:text-[1rem] leading-[1.5rem] font-normal font-[Onest] text-white sm:w-[50%]">
                 {item.subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-[0.75rem] mt-2  mob:flex-row mob:gap-[0.5rem] mob:mt-1  ">
+              <div className="flex flex-col sm:flex-row gap-[0.75rem] mt-2  mob:flex-row mob:gap-[0.5rem] mob:mt-1 lg:w-fit  ">
                 <Button
                   variant="dark"
-                  className="shadow-md lg:w-fit sm:flex-1 large-btn-flex"
+                  className="shadow-md lg:min-w-[180px] sm:flex-1 lg:flex-0 large-btn-flex"
                 >
                   Explore More
                 </Button>
                 <Button
                   variant="light"
-                  className="shadow-md lg:w-fit sm:flex-1 large-btn-flex "
+                  className="shadow-md lg:min-w-[180px] sm:flex-1 lg:flex-0 large-btn-flex "
                 >
                   Contact us
                 </Button>

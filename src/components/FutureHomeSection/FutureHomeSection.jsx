@@ -6,7 +6,7 @@ import Button from '../Button'
 
 const cardData = [
   {
-    title: 'Power Earth',
+    title: 'Power Earth 3',
     description:
       'We design sustainable systems that are massively scalable—resulting in the greatest environmental benefit possible. Our energy generation and storage products work together with our electric vehicles to amplify their impact. Our master plans share our vision for a sustainable future and what we are doing about it.',
     image: img1,
@@ -47,7 +47,7 @@ const FutureHomeSection = () => {
         {/* Static Cards */}
         {cardData.map((item, idx) => (
           <div key={idx} className="space-y-8">
-            <div className="flex flex-col sm:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8 sm:gap-2 lg:px-0 sm:px-10 mob:px-5">
+            <div className="flex flex-col sm:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8 sm:gap-2 lg:px-0 sm:px-10 mob:px-0 mob:pt-10">
               <h2
                 className="
     lg:text-xl font-heading font-regular text-black
@@ -89,7 +89,7 @@ const FutureHomeSection = () => {
         {/* Tabs Controlled Section */}
         <div className="space-y-6">
           {/* Heading + Description (Power Earth block reused here) */}
-          <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-5">
+          <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-0 lg:my-0 sm:my-10 mob:my-10">
             <h2
               className="
     lg:text-xl font-heading font-regular text-black
@@ -99,7 +99,7 @@ const FutureHomeSection = () => {
   "
             >
               {' '}
-              Power Earth
+              Power Earth 4
             </h2>
             <p
               className="text-[0.875rem] leading-[1.25rem] tracking-[0.02em] text-gray-700 font-[Onest] font-normal capitalize lg:w-2/3 sm:font-onest sm:font-normal sm:text-[14px] sm:leading-[20px] sm:tracking-[0.02em] sm:capitalize
@@ -126,14 +126,14 @@ const FutureHomeSection = () => {
           </div>
 
           {/* Tabs */}
-          <div className="mob:flex mob:overflow-x-auto mob:gap-5 sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-4 lg:gap-8 sm:pb-5 mob:pb-5 mob:px-5">
+          <div className="mob:flex mob:overflow-x-auto mob:gap-0 sm:flex sm:overflow-x-auto sm:gap-0 lg:grid lg:grid-cols-4 lg:gap-8 sm:pb-5 mob:pb-10 px-0">
             {bottomTabs.map((item, idx) => {
               const isActive = idx === activeTab
               return (
                 <div
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0 lg:px-0 sm:px-10 mob:px-5"
+                  className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0 lg:px-0 sm:px-5 mob:px-5"
                 >
                   <h3
                     className={`text-xs  mob:text-lg sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${

@@ -11,13 +11,13 @@ const AboutImgs = () => {
   return (
     <section className="bg-white sm:px-0 lg:px-36 lg:py-20 sm:py-10">
       {/* First Text Block */}
-      <div className="flex flex-col  lg:flex-row lg:items-start lg:justify-between lg:gap-8">
+      <div className="flex flex-col  lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-5">
         <h2
           className="lg:text-xl font-heading font-regular text-black lg:h-[3.375rem] lg:pt-[1rem] lg:pb-[0.5rem] 
         sm:text-2xl sm:h-[2.375rem] sm:pt-[0.5rem] sm:pb-[0.25rem] mob:text-2xl mob:h-[2.375rem] 
-        mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4"
+        mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4 mob:my-10"
         >
-          Power Earth
+          Power Earth 5
         </h2>
         <p className="text-[0.875rem] leading-[1.25rem] tracking-[0.02em] text-gray-700 font-[Onest] font-normal capitalize lg:w-2/3 sm:font-onest sm:text-[14px] sm:leading-[20px] sm:tracking-[0.02em] sm:capitalize mob:text-[14px] mob:leading-[20px] mob:tracking-[0.02em] mob:capitalize mob:px-5">
           We design sustainable systems that are massively scalable—resulting in
@@ -50,9 +50,9 @@ const AboutImgs = () => {
       </div>
 
       {/* Second Text Block */}
-      <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
+      <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-5 lg:my-0 sm:my-0">
         <h2 className="lg:text-xl font-heading font-regular text-black lg:h-[3.375rem] lg:pt-[1rem] lg:pb-[0.5rem] sm:text-2xl sm:h-[2.375rem] sm:pt-[0.5rem] sm:pb-[0.25rem] mob:text-2xl mob:h-[2.375rem] mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4">
-          Power Earth
+          Power Earth 6
         </h2>
         <p className="text-[0.875rem] leading-[1.25rem] tracking-[0.02em] text-gray-700 font-[Onest] font-normal capitalize lg:w-2/3 sm:font-onest sm:text-[14px] sm:leading-[20px] sm:tracking-[0.02em] sm:capitalize mob:text-[14px] mob:leading-[20px] mob:tracking-[0.02em] mob:capitalize mob:px-5">
           We design sustainable systems that are massively scalable—resulting in

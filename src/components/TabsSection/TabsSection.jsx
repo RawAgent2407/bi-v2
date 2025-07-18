@@ -5,7 +5,7 @@ import img3 from '../../assets/hero-slide-1.png' // Replace with actual third im
 
 const tabData = [
   {
-    title: 'Corporate house',
+    title: 'Corporate house a',
     description: 'Produce solar energy for residential and commercial needs',
     image: img1,
   },
@@ -26,7 +26,7 @@ const TabsSection = () => {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="bg-black sm:px-0 lg:px-36 lg:py-20 sm:py-10">
+    <section className="bg-black sm:px-0 lg:px-36 lg:py-20 sm:py-10 mob:pb-5">
       <div className="w-full mx-auto space-y-10">
         {/* Image Section */}
         <div className="overflow-hidden lg:rounded-lg h-[300px] sm:h-[400px] md:h-[500px]">
@@ -38,7 +38,7 @@ const TabsSection = () => {
         </div>
 
         {/* Tabs */}
-        <div className="mob:flex mob:overflow-x-auto mob:gap-5 sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-3 lg:gap-8 sm:pb-5 mob:pb-5 mob:px-5 sm:px-12">
+        <div className="mob:flex mob:overflow-x-auto mob:gap-5 sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-3 lg:gap-8 sm:pb-5 mob:pb-5 mob:px-5 sm:px-0">
           {tabData.map((item, index) => {
             const isActive = index === activeTab
             return (
