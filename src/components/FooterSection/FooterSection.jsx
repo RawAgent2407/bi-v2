@@ -46,7 +46,10 @@ const FooterSection = () => {
                 <li>
                   <Link to="/blog">Blog</Link>
                 </li>
-                <li>Contact Us</li>
+                <li>
+                  {' '}
+                  <a href="#contact">Contact us</a>
+                </li>
               </ul>
             </div>
 

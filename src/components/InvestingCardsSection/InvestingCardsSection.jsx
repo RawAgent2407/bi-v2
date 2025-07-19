@@ -5,6 +5,8 @@ import img3 from '../../assets/blog3.jpg'
 import Button from '../Button'
 import './InvestingCardsSection.css'
 
+import { Link } from 'react-router-dom'
+
 const blogPosts = [
   {
     image: img1,
@@ -37,7 +39,7 @@ const InvestingCardsSection = () => {
 
           {/* Hide button for screens less than 1280px */}
           <Button variant="dark-outline" className="dont-show-inlarge lg:block">
-            Explore More
+            <Link to="/projects">Explore More</Link>
           </Button>
         </div>
 
@@ -69,7 +71,9 @@ const InvestingCardsSection = () => {
 
         {/* Button only for sm screens below blog cards */}
         <div className="block lg:hidden mt-8 text-center">
-          <Button variant="dark-outline">Explore More</Button>
+          <Button variant="dark-outline">
+            <Link to="/projects">Explore More</Link>
+          </Button>
         </div>
       </div>
     </section>

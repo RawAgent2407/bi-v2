@@ -6,7 +6,7 @@ import 'swiper/css/navigation'
 import sliderData from '../../data/sliderData'
 import './HeroSlider.css'
 import Button from '../Button'
-
+import { Link } from 'react-router-dom'
 import { Pagination } from 'swiper/modules'
 const HeroSlider = () => {
   return (
@@ -99,8 +99,12 @@ const HeroSlider = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4">
-                  <Button variant="dark">Explore More</Button>
-                  <Button variant="light">Contact us</Button>
+                  <Button variant="dark">
+                    <Link to="/projects">Explore More</Link>
+                  </Button>
+                  <Button variant="light">
+                    <a href="#contact">Contact us</a>
+                  </Button>
                 </div>
               </div>
             </div>

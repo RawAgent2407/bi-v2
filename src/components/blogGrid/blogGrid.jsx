@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav'
 import ContactSection from '../ContactSection/ContactSection'
 import FooterSection from '../FooterSection/FooterSection'
 import blogsData from '../../data/blogsData'
-
+import BlogHero from '../blogHero/blogHero'
 const SingleBlog = ({ blogsData }) => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -30,7 +30,12 @@ const SingleBlog = ({ blogsData }) => {
   return (
     <div className="font-sans text-gray-900 bg-white min-h-screen">
       <Nav />
-      <main className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 px-4 sm:px-6 lg:px-20 pt-8 pb-16">
+      <BlogHero />
+      <main
+        className=" mx-auto flex flex-col lg:flex-row gap-10 
+      sm:px-12 lg:px-36 lg:pb-20 lg:pt-0 sm:py-14 mob:px-5 mob:my-10 bg-white
+      "
+      >
         <aside className="lg:w-1/5 w-full mb-8 lg:mb-0">
           <div className="lg:sticky top-20">
             <div className="text-xs leading-5 text-gray-700 space-y-1 mb-6">
@@ -48,7 +53,7 @@ const SingleBlog = ({ blogsData }) => {
           </div>
         </aside>
         <div className="lg:w-4/5 w-full">
-          <div className="w-full rounded overflow-hidden mb-6">
+          <div className="w-full rounded-lg overflow-hidden mb-6 max-h-[70dvh] flex items-center justify-center">
             <img
               src={blog.image}
               alt={blog.title}
@@ -107,8 +112,10 @@ const SingleBlog = ({ blogsData }) => {
           </div>
         </div>
       </main>
-      <ContactSection />
-      <FooterSection />
+      <section className="footer-wrapper lg:pt-20   lg:p-20">
+        <ContactSection />
+        <FooterSection />
+      </section>
     </div>
   )
 }
@@ -167,7 +174,7 @@ const BlogGrid = () => {
   }, [])
 
   return (
-    <section className="w-full px-4 sm:px-10 lg:px-20 py-10 bg-white mob:px-5 mob:py-10 sm:px-10">
+    <section className="w-full sm:px-10 lg:px-36 py-10 bg-white mob:px-5 mob:py-10 sm:px-10">
       <div className="mx-auto flex flex-col lg:flex-row gap-10">
         {/* Left Sticky Tags */}
         <aside className="lg:w-1/5 w-full">

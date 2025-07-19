@@ -46,7 +46,7 @@ const FutureHomeSection = () => {
       <div className="lg:space-y-20 w-full mx-auto">
         {/* Static Cards */}
         {cardData.map((item, idx) => (
-          <div key={idx} className="space-y-8">
+          <div key={idx} className="lg:space-y-16 sm:space-y-10 mob:space-y-5">
             <div className="flex flex-col sm:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8 sm:gap-2 lg:px-0 sm:px-10 mob:px-0 mob:pt-10">
               <h2
                 className="
@@ -87,7 +87,7 @@ const FutureHomeSection = () => {
         ))}
 
         {/* Tabs Controlled Section */}
-        <div className="space-y-6">
+        <div className="lg:space-y-16 sm:space-y-10 mob:space-y-5">
           {/* Heading + Description (Power Earth block reused here) */}
           <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-0 lg:my-0 sm:my-10 mob:my-10">
             <h2
@@ -118,45 +118,10 @@ const FutureHomeSection = () => {
 
           {/* Active Image */}
           <div className="overflow-hidden lg:rounded-lg h-[300px] sm:h-[400px] md:h-[500px]">
-            <img
-              src={bottomTabs[activeTab].image}
-              alt={bottomTabs[activeTab].title}
-              className="w-full h-full object-cover"
-            />
+            <img src={img2} className="w-full h-full object-cover" />
           </div>
 
           {/* Tabs */}
-          <div className="mob:flex mob:overflow-x-auto mob:gap-0 sm:flex sm:overflow-x-auto sm:gap-0 lg:grid lg:grid-cols-4 lg:gap-8 sm:pb-5 mob:pb-10 px-0">
-            {bottomTabs.map((item, idx) => {
-              const isActive = idx === activeTab
-              return (
-                <div
-                  key={idx}
-                  onClick={() => setActiveTab(idx)}
-                  className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0 lg:px-0 sm:px-5 mob:px-5"
-                >
-                  <h3
-                    className={`text-xs  mob:text-lg sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${
-                      isActive
-                        ? 'text-black border-black'
-                        : 'text-gray-400 border-gray-300 group-hover:text-black group-hover:border-black'
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className={`text-[11px] mob:text-xs sm:text-sm font-sans ${
-                      isActive
-                        ? 'text-gray-700'
-                        : 'text-gray-400 group-hover:text-gray-700'
-                    }`}
-                  >
-                    {item.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
         </div>
       </div>
     </section>
