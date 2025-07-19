@@ -8,8 +8,9 @@ const ContactSection = () => {
     <div className="flex lg:p-16 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-10 sm:py-10 sm:pt-20 mob:px-5 mob:pt-10 mob:pb-14  mob:flex-col-reverse">
       {/* Left Info */}
       <div
-        className="sm:p-10 lg:p-12 lg:p-20 lg:space-y-8 border-b md:border-b-0 lg:border-r lg:w-2/5 sm:w-full sm:bg-white mob:bg-white sm:p-20 mob:p-8 sm:gap-8 sm:flex sm:flex-col sm:items-start sm:justify-start mob:p-5 mob:gap-6 mob:flex mob:flex-col mob:items-start"
-        style={{ flex: '0 0 40%' }}
+        className=" lg:p-12 lg:p-20 lg:space-y-8 border-b md:border-b-0 lg:border-r 
+        sm:w-full sm:bg-white mob:bg-white sm:py-16 sm:px-10 mob:p-8 sm:gap-8 
+        sm:flex sm:flex-col sm:items-start sm:justify-start mob:p-5 mob:gap-6 mob:flex mob:flex-col mob:items-start  lg:w-[50%] "
       >
         <div>
           <h2 className="text-xl sm:text-3xl mob:text-[1.25rem] font-bold text-gray-900 font-heading">
@@ -45,7 +46,7 @@ const ContactSection = () => {
 
       {/* Right Form */}
       <div
-        className="bg-[#E7E5E2] sm:py-16 sm:px-10 lg:p-12 lg:p-16 lg:w-3/5 sm:w-full mob:p-8 mob:pt-10"
+        className="bg-[#E7E5E2] sm:py-16 sm:px-10 lg:p-12 lg:p-16 lg:w-[50%] sm:w-full mob:p-8 mob:pt-10"
         style={{ flex: '0 0 60%' }}
       >
         <form className="space-y-4">

@@ -41,7 +41,7 @@ const LocationSection = () => {
         {/* Map */}
         <div className="relative w-full lg:h-[450px] sm:h-[480px] mob:h-[400px] overflow-hidden rounded-lg shadow-lg">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.254675631691!2d70.78520447951767!3d22.3062060903153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c9f494ec2f93%3A0xebb91e7b1f780056!2sRacecourse%2C%20Rajkot!5e0!3m2!1sen!2sin!4v1751555511221!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.698444187489!2d72.19215077500732!3d22.251517544662367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8859f9e885b%3A0xc838b704d88b62c0!2sDholera%20SIR%20Projects%20Pvt%20Ltd%20%2C!5e0!3m2!1sen!2sin!4v1752900436809!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

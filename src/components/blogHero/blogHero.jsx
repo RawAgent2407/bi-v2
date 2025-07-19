@@ -2,7 +2,7 @@ import React from 'react'
 
 const BlogHero = () => {
   return (
-    <section className="h-[50vh] w-full flex items-center justify-center bg-white px-4 sm:px-10 lg:px-16 mob:px-5 sm:px-10">
+    <section className="h-[50vh] w-full flex items-center lg:justify-center bg-white px-4 sm:px-10 lg:px-16 mob:px-5 sm:px-10 mt-[10vh]">
       <div className=" text-left w-fit ">
         <p
           className="  lg:text-left capitalize font-[Onest] font-normal

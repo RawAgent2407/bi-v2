@@ -16,7 +16,7 @@ const Nav = () => {
           {/* Left: Logo */}
           <div className="flex-shrink-0">
             <span className="text-2xl font-bold color-[#323232] tracking-tightest font-heading">
-              BI Reality
+              Build India
             </span>
           </div>
 

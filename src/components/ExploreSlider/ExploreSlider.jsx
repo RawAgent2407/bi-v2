@@ -9,34 +9,46 @@ const ExploreSlider = () => {
   const [spacing, setSpacing] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderKey, setSliderKey] = useState(0)
+  // --- START: Added state for responsive slider options ---
+  const [perView, setPerView] = useState(1)
+  const [origin, setOrigin] = useState('center')
+  // --- END: Added state for responsive slider options ---
 
-  // Handle spacing responsively
+  // Handle options responsively
   useEffect(() => {
-    const updateSpacing = () => {
+    // Renamed for clarity
+    const updateSliderOptions = () => {
       const width = window.innerWidth
 
-      if (width < 640) {
-        setSpacing(12) // Mobile
-      } else if (width < 1280) {
-        setSpacing(22) // Small
+      if (width < 1280) {
+        // Keep original settings for mobile and small screens
+        setSpacing(width < 640 ? 12 : 22)
+        setPerView(1)
+        setOrigin('center')
       } else {
-        setSpacing(32) // Large
+        // --- START: Apply new settings for large screens ---
+        setSpacing(32)
+        setPerView(1.25) // Show 1 and a quarter slides
+        setOrigin('auto') // Align slides to the left
+        // --- END: Apply new settings for large screens ---
       }
 
       setSliderKey((prev) => prev + 1) // Force re-init
     }
 
-    updateSpacing()
-    window.addEventListener('resize', updateSpacing)
-    return () => window.removeEventListener('resize', updateSpacing)
+    updateSliderOptions()
+    window.addEventListener('resize', updateSliderOptions)
+    return () => window.removeEventListener('resize', updateSliderOptions)
   }, [])
 
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: false,
     slides: {
-      perView: 1,
+      // --- START: Use state variables for configuration ---
+      perView,
       spacing,
-      origin: 'center',
+      origin,
+      // --- END: Use state variables for configuration ---
     },
     slideChanged(s) {
       setCurrentSlide(s.track.details.rel)
@@ -44,7 +56,7 @@ const ExploreSlider = () => {
   })
 
   return (
-    <div className="w-full mob:px-5 sm:px-10  lg:px-36 py-10 explore-slider ">
+    <div className="w-full mob:px-5 sm:px-10  lg:px-36 lg:pr-0 py-10 explore-slider ">
       <div key={sliderKey} ref={sliderRef} className="keen-slider swiper-fix">
         {exploreData.map((item) => (
           <div

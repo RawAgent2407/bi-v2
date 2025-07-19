@@ -6,24 +6,18 @@ import FooterSection from '../FooterSection/FooterSection'
 import blogsData from '../../data/blogsData'
 
 const SingleBlog = ({ blogsData }) => {
-  // Expects blogsData prop - NOTE: You will likely need to fetch blog data *inside* this component using the ID from useParams instead of relying on a prop passed via routing.
-  const { id } = useParams() // Get the blog ID from the URL
-  const navigate = useNavigate() // For programmatic navigation (e.g., if blog not found)
+  const { id } = useParams()
+  const navigate = useNavigate()
   const [blog, setBlog] = useState(null)
 
   useEffect(() => {
-    // Find the blog post using the ID from the URL params
-    // NOTE: Replace this with your actual data fetching logic (e.g., API call or finding in a global data source)
-    const foundBlog = blogsData?.find((b) => b.id === parseInt(id)) // Using optional chaining in case blogsData is undefined
+    const foundBlog = blogsData?.find((b) => b.id === parseInt(id))
     if (foundBlog) {
       setBlog(foundBlog)
     } else {
-      // If blog not found, redirect to home or a 404 page
-      console.warn(`Blog with ID ${id} not found.`) // Log a warning
-      // navigate('/not-found'); // Uncomment and replace with your not-found route if you have one
-      // navigate('/'); // Uncomment to redirect to home if blog not found
+      console.warn(`Blog with ID ${id} not found.`)
     }
-  }, [id, blogsData, navigate]) // Re-run if ID, blogsData, or navigate changes
+  }, [id, blogsData, navigate])
 
   if (!blog) {
     return (
@@ -37,7 +31,6 @@ const SingleBlog = ({ blogsData }) => {
     <div className="font-sans text-gray-900 bg-white min-h-screen">
       <Nav />
       <main className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 px-4 sm:px-6 lg:px-20 pt-8 pb-16">
-        {/* Left Sticky Meta Info */}
         <aside className="lg:w-1/5 w-full mb-8 lg:mb-0">
           <div className="lg:sticky top-20">
             <div className="text-xs leading-5 text-gray-700 space-y-1 mb-6">
@@ -54,7 +47,6 @@ const SingleBlog = ({ blogsData }) => {
             </div>
           </div>
         </aside>
-        {/* Right Blog Content */}
         <div className="lg:w-4/5 w-full">
           <div className="w-full rounded overflow-hidden mb-6">
             <img
@@ -197,7 +189,6 @@ const BlogGrid = () => {
           </div>
         </aside>
 
-        {/* Right Blog Grid */}
         <div className="lg:w-4/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-14">
           {loading && (
             <div className="sm:col-span-2 lg:col-span-2 text-center py-10">

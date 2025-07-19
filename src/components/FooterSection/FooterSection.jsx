@@ -10,7 +10,7 @@ const FooterSection = () => {
         <div className="flex justify-between  items-start flex-col sm:flex-row gap-4">
           <div className="flex items-center space-x-2">
             <span className="text-gray-900 font-heading font-regular text-3xl">
-              BI Reality
+              Build India
             </span>
             <span className="text-gray-400 font-bold">|</span>
             <span className="text-gray-600 text-sm">

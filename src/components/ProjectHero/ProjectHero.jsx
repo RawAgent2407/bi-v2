@@ -38,7 +38,7 @@ const ProjectHero = () => {
       </div>
 
       {/* Stats: Bottom Centered */}
-      <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 w-full  px-4 z-10 mob:bottom-10 mob:w-full mob:px-0">
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 w-full  px-4 z-10 mob:bottom-10 lg:w-[50%] mob:w-full mob:px-0">
         <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
           <div className="flex flex-col items-center gap-1">
             {/* <FiUsers className="text-white text-2xl sm:text-3xl" /> */}
