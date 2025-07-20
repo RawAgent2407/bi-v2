@@ -11,6 +11,16 @@ import DarkFooterSection from '../../components/DarkFooterSection/DarkFooterSect
 import FooterSection from '../../components/FooterSection/FooterSection'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
+// Import JSON data
+import projectHeroData from '../../data/projects/projectHero.json'
+import impactData from '../../data/about/impactSection.json'
+import visionData from '../../data/about/visionSection.json'
+import tabsData from '../../data/projects/tabsSection.json'
+import bigImgData from '../../data/projects/bigImgSection.json'
+import futureHomeData from '../../data/home/futureHomeSection.json'
+import bigVideoData from '../../data/projects/bigVideoSection.json'
+import navData from '../../data/shared/nav.json'
+
 function Projects() {
   return (
     <>
@@ -23,14 +33,14 @@ function Projects() {
       >
         <WhatsAppIcon sx={{ fontSize: 28 }} />
       </a>
-      <Nav />
-      <ProjectHero />
-      <ImpactSection />
-      <VisionSection />
-      <TabsSection />
-      <BigImgSection />
-      <FutureHomeSection />
-      <BigVideoSection />
+      <Nav data={navData} />
+      <ProjectHero data={projectHeroData} />
+      <ImpactSection data={impactData} />
+      <VisionSection data={visionData} />
+      <TabsSection data={tabsData} />
+      <BigImgSection data={bigImgData} />
+      <FutureHomeSection data={futureHomeData} />
+      <BigVideoSection data={bigVideoData} />
       <section
         className="footer-wrapper lg:pt-20 dark-footer-wrapper   "
         id="contact"

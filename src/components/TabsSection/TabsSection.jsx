@@ -1,29 +1,9 @@
 import React, { useState } from 'react'
-import img1 from '../../assets/hero-slide-1.png'
-import img2 from '../../assets/hero-slide-2.png'
-import img3 from '../../assets/hero-slide-1.png' // Replace with actual third image
 
-const tabData = [
-  {
-    title: 'Corporate house a',
-    description: 'Produce solar energy for residential and commercial needs',
-    image: img1,
-  },
-  {
-    title: 'healthcare',
-    description: 'Install batteries to store clean energy',
-    image: img2,
-  },
-  {
-    title: 'Transport and Connectivity',
-    description:
-      'Make badass, zero-emission vehicles that can charge with clean energy',
-    image: img3,
-  },
-]
-
-const TabsSection = () => {
+const TabsSection = ({ data }) => {
   const [activeTab, setActiveTab] = useState(0)
+
+  const { tabs } = data
 
   return (
     <section className="bg-black sm:px-0 lg:px-36 lg:py-20 sm:py-10 mob:pb-5">
@@ -31,15 +11,18 @@ const TabsSection = () => {
         {/* Image Section */}
         <div className="overflow-hidden lg:rounded-lg h-[300px] sm:h-[400px] md:h-[500px]">
           <img
-            src={tabData[activeTab].image}
-            alt={tabData[activeTab].title}
+            src={
+              tabs[activeTab]?.projects[0]?.image ||
+              'https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-1.png'
+            }
+            alt={tabs[activeTab]?.projects[0]?.name || 'Project'}
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Tabs */}
         <div className="mob:flex mob:overflow-x-auto mob:gap-5 sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-3 lg:gap-8 sm:pb-5 mob:pb-5 mob:px-5 sm:px-0">
-          {tabData.map((item, index) => {
+          {tabs.map((item, index) => {
             const isActive = index === activeTab
             return (
               <div
@@ -54,7 +37,7 @@ const TabsSection = () => {
                       : 'text-gray-400 border-gray-600 group-hover:text-white group-hover:border-white'
                   }`}
                 >
-                  {item.title}
+                  {item.name}
                 </h3>
                 <p
                   className={`text-xs mob:text-sm sm:text-sm font-sans ${

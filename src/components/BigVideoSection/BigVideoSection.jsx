@@ -1,67 +1,58 @@
 import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { FiPhone, FiSend, FiMapPin } from 'react-icons/fi'
-import videoThumb from '../../assets/yt.png'
 import Button from '../Button'
 
-const BigVideoSection = () => {
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
+
+const BigVideoSection = ({ data }) => {
+  const { title, description, videos, contactInfo } = data
+
   return (
     <section
       className="relative w-full bg-cover bg-center"
-      style={{ backgroundImage: `url(${videoThumb})` }}
+      style={{
+        backgroundImage: `url(${
+          videos[0]?.thumbnail ||
+          'https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/yt.png'
+        })`,
+      }}
     >
       {/* Overlay only on sm and up */}
       <div className="absolute inset-0 z-10 hidden sm:block bg-black/20 lg:bg-gradient-to-t lg:from-black/30 lg:via-transparent lg:to-transparent" />
 
-      {/* Hero heading and explore btn (hidden on mobile) */}
-      {/* <div className="absolute top-0 left-0 right-0 flex-col z-20 hidden mob:hidden sm:flex items-center justify-center pt-[10vh] gap-4 px-4 ">
-        <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-semibold text-center">
-          Live Smart. Live Green.
-        </h2>
-      </div> */}
-
-      {/* Play Button - bottom left */}
-      {/* <div className="absolute bottom-4 left-4 z-30">
-        <Button
-          variant="dark"
-          className="w-10 h-10 p-0 flex items-center justify-center bg-black/60 hover:bg-black/80"
-        >
-          <FaPlay size={12} />
-        </Button>
-      </div> */}
-
       {/* Contact Form sits on same background */}
       <div className="relative z-20">
-        <div className="flex lg:p-36 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-16 sm:py-10 sm:pt-52 mob:px-5 mob:pt-10 mob:pb-14 mob:flex-col-reverse">
+        <div className="flex lg:p-36 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-16 sm:py-10  mob:px-5 mob:pt-10 mob:pb-14 mob:flex-col-reverse">
           {/* Left Info */}
           <div className="sm:p-10 lg:p-12 lg:p-20 lg:space-y-8 border-b md:border-b-0 lg:border-r lg:w-[45%] sm:w-full sm:bg-white mob:bg-white sm:p-20 mob:p-8 sm:gap-8 sm:flex sm:flex-col sm:items-start sm:justify-start mob:p-5 mob:gap-6 mob:flex mob:flex-col mob:items-start">
             <div>
               <h2 className="text-xl sm:text-3xl mob:text-[1.25rem] font-bold text-gray-900 font-heading">
-                Let’s Connect
+                {title}
               </h2>
               <p className="text-sm mob:text-[0.875rem] text-gray-600 font-sans mt-2 leading-relaxed">
-                Have A Question, Feedback, Or Just{' '}
-                <br className="hidden sm:block" /> Want To Say Hi?
+                {description}
               </p>
             </div>
 
             <div className="space-y-4 text-sm mob:text-[0.875rem] text-gray-700">
               <div className="flex items-start gap-3 mob:gap-2">
                 <FiPhone className="mt-1 text-gray-900 text-lg" />
-                <span>+91 98983 39903</span>
+                <span>{contactInfo?.phone || '+91 98983 39903'}</span>
               </div>
 
               <div className="flex items-start gap-3 mob:gap-2">
                 <FiSend className="mt-1 text-gray-900 text-lg" />
-                <span>buildindiarealty@gmail.com</span>
+                <span>
+                  {contactInfo?.email || 'buildindiarealty@gmail.com'}
+                </span>
               </div>
 
               <div className="flex items-start gap-3 mob:gap-2">
-                <FiMapPin className="mt-1 text-gray-900 text-lg" />
+                <LocationOnOutlinedIcon className="mt-1 text-gray-900 text-xl" />
                 <span className="leading-relaxed">
-                  Zion Z1, 907–908, nr. Maple County Road, <br />
-                  off Sindhu Bhavan Marg, Bodakdev, <br />
-                  Ahmedabad, Gujarat 380054
+                  {contactInfo?.address ||
+                    'Zion Z1, 907–908, nr. Maple County Road, off Sindhu Bhavan Marg, Bodakdev, Ahmedabad, Gujarat 380054'}
                 </span>
               </div>
             </div>

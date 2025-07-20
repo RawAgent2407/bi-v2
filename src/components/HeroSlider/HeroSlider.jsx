@@ -3,12 +3,14 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import sliderData from '../../data/sliderData'
 import './HeroSlider.css'
 import Button from '../Button'
 import { Link } from 'react-router-dom'
 import { Pagination } from 'swiper/modules'
-const HeroSlider = () => {
+
+const HeroSlider = ({ data }) => {
+  const { slides } = data
+
   return (
     <div className="relative w-full lg:h-[80dvh] mob:h-[100dvh] sm:h-[100dvh] overflow-hidden hero-slider">
       <Swiper
@@ -52,7 +54,7 @@ const HeroSlider = () => {
           }
         }}
       >
-        {sliderData.map((slide) => (
+        {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
               className="w-full h-full bg-cover bg-center relative"

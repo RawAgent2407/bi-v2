@@ -1,11 +1,17 @@
 import React from 'react'
-import visionImg from '../../assets/vision.png' // Replace with actual path
 
-const VisionSection = () => {
+const VisionSection = ({ data }) => {
+  const { title, description, visionPoints } = data
+
   return (
     <section
       className="relative w-full h-[60vh] sm:h-[90vh] bg-cover bg-center text-white"
-      style={{ backgroundImage: `url(${visionImg})` }}
+      style={{
+        backgroundImage: `url(${
+          visionPoints[0]?.image ||
+          'https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/vision.png'
+        })`,
+      }}
     >
       {/* Top white gradient */}
       <div className="absolute top-0 left-0 w-full h-20 sm:h-32 bg-gradient-to-b from-white to-transparent z-10" />
@@ -23,7 +29,7 @@ const VisionSection = () => {
     mob:text-[2.5rem]
     mob:text-left"
         >
-          Where Vision Meets Precision
+          {title}
         </h2>
         <p
           className="   lg:text-left capitalize font-[Onest] font-normal
@@ -33,11 +39,7 @@ const VisionSection = () => {
   mob:text-[0.9rem]
     mob:text-left"
         >
-          The iconic triple-tower entrance and grand central boulevard of
-          Rajpath Enclave make a lasting first impression. Designed with
-          symmetry, elegance, and smart engineering, it leads to a clubhouse
-          equipped with modern comforts, landscaped gardens, and water features.
-          Security, scale, and serenity — all begin here.
+          {description}
         </p>
       </div>
     </section>

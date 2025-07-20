@@ -6,6 +6,13 @@ import BlogHero from '../../components/blogHero/blogHero'
 import BlogGrid from '../../components/blogGrid/blogGrid'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
+// Import JSON data
+import blogHeroData from '../../data/blog/blogHero.json'
+import blogGridData from '../../data/blog/blogGrid.json'
+import contactData from '../../data/shared/contactSection.json'
+import footerData from '../../data/shared/footerSection.json'
+import navData from '../../data/shared/nav.json'
+
 function Blog() {
   return (
     <div>
@@ -18,12 +25,12 @@ function Blog() {
       >
         <WhatsAppIcon sx={{ fontSize: 28 }} />
       </a>
-      <Nav />
-      <BlogHero />
-      <BlogGrid />
+      <Nav data={navData} />
+      <BlogHero data={blogHeroData} />
+      <BlogGrid data={blogGridData} />
       <section className="footer-wrapper lg:pt-20   lg:p-20" id="contact">
-        <ContactSection />
-        <FooterSection />
+        <ContactSection data={contactData} />
+        <FooterSection data={footerData} />
       </section>
     </div>
   )

@@ -1,51 +1,15 @@
 import React from 'react'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import i1 from '../assets/blog1.jpg'
-import i2 from '../assets/blog2.jpg'
 import { Link } from 'react-router-dom'
 // Import Swiper components and styles
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-const projects = [
-  {
-    image: i1,
-    title: 'Dholera SIR',
-    location: 'Green City',
-    price: '₹ 4.3-8.5Cr',
-    link: 'Internal Connectivity',
-    overlayText: 'Office Space',
-  },
-  {
-    image: i2,
-    title: 'Rajpath Enclave',
-    location: 'Dholera',
-    price: '₹ 4.3-8.5Cr',
-    link: 'Ease Of Governance',
-    overlayText: 'Rajpath Enclave',
-  },
-  // Add more projects here to see the swipe effect
-  {
-    image: i1,
-    title: 'Dholera SIR II',
-    location: 'Green City',
-    price: '₹ 5.1-9.2Cr',
-    link: 'Internal Connectivity',
-    overlayText: 'Office Space',
-  },
-  {
-    image: i2,
-    title: 'Rajpath Enclave II',
-    location: 'Dholera',
-    price: '₹ 6.3-10.5Cr',
-    link: 'Ease Of Governance',
-    overlayText: 'Rajpath Enclave',
-  },
-]
+const ProjectDrawer = ({ data }) => {
+  const { projects } = data
 
-const ProjectDrawer = () => {
   return (
     <div className="fixed top-[64px] left-0 w-screen bg-white z-40 shadow-md">
       <div className="w-full max-w-[1400px] mx-auto flex items-start px-6 py-10 gap-8">
@@ -54,7 +18,7 @@ const ProjectDrawer = () => {
           {/* Top: Plots */}
           <a
             href="#"
-            className="group text-sm font-medium  text-gray-800 hover:text-black flex items-end justify-end gap-2"
+            className="group text-sm font-medium  text-gray-800 hover:text-black flex items-end justify-end gap-2"
           >
             Plots
           </a>
@@ -96,7 +60,7 @@ const ProjectDrawer = () => {
             {projects.map((project, idx) => (
               <SwiperSlide key={idx} style={{ height: 'auto' }}>
                 {/* The card component's classes are UNCHANGED */}
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all hover:shadow-lg h-full">
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all  h-full">
                   <div className="relative h-[220px]">
                     <img
                       src={project.image}

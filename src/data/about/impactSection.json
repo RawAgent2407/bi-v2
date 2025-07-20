@@ -1,0 +1,31 @@
+{
+  "title": "Our Impact",
+  "subtitle": "Transforming communities and creating value",
+  "description": "We measure our success not just in square feet, but in the positive impact we create in communities.",
+  "impacts": [
+    {
+      "id": 1,
+      "title": "Community Development",
+      "description": "Creating sustainable communities with modern infrastructure",
+      "icon": "🏘️"
+    },
+    {
+      "id": 2,
+      "title": "Economic Growth",
+      "description": "Generating employment and boosting local economies",
+      "icon": "📈"
+    },
+    {
+      "id": 3,
+      "title": "Environmental Responsibility",
+      "description": "Implementing green building practices and sustainability",
+      "icon": "🌱"
+    },
+    {
+      "id": 4,
+      "title": "Innovation",
+      "description": "Pioneering smart city solutions and technology integration",
+      "icon": "💡"
+    }
+  ]
+}

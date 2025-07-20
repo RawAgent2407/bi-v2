@@ -9,7 +9,7 @@ const images = [img1, img2, img3]
 
 const AboutImgs = () => {
   return (
-    <section className="bg-white sm:px-0 lg:px-36 lg:py-20 sm:py-10">
+    <section className="bg-white sm:px-0 lg:px-36 lg:py-20 sm:py-10 lg:pb-0">
       {/* First Text Block */}
       <div className="flex flex-col  lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-5">
         <h2
@@ -50,7 +50,7 @@ const AboutImgs = () => {
       </div>
 
       {/* Second Text Block */}
-      <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-5 lg:my-0 sm:my-0">
+      <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-5 lg:my-0 sm:my-0 lg:mt-20 lg:mb-0 lg:pb-0">
         <h2
           className="lg:text-xl font-heading font-semi-bold text-black lg:h-[3.375rem] lg:pt-0
         sm:text-2xl sm:h-[2.375rem] sm:pt-[0.5rem] sm:pb-[0.25rem] mob:text-2xl mob:h-[2.375rem] 

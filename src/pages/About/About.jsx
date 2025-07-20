@@ -9,6 +9,16 @@ import FooterSection from '../../components/FooterSection/FooterSection'
 import AboutImgs from '../../components/AboutImgs/AboutImgs'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
+// Import JSON data
+import projectHeroData from '../../data/about/projectHero.json'
+import impactData from '../../data/about/impactSection.json'
+import visionData from '../../data/about/visionSection.json'
+import aboutImgsData from '../../data/about/aboutImgs.json'
+import exploreSliderData from '../../data/home/exploreSlider.json'
+import contactData from '../../data/shared/contactSection.json'
+import footerData from '../../data/shared/footerSection.json'
+import navData from '../../data/shared/nav.json'
+
 const About = () => {
   return (
     <>
@@ -21,15 +31,15 @@ const About = () => {
       >
         <WhatsAppIcon sx={{ fontSize: 28 }} />
       </a>
-      <Nav />
-      <ProjectHero />
-      <ImpactSection />
-      <VisionSection />
-      <AboutImgs />
-      <ExploreSlider />
+      <Nav data={navData} />
+      <ProjectHero data={projectHeroData} />
+      <ImpactSection data={impactData} />
+      <VisionSection data={visionData} />
+      <AboutImgs data={aboutImgsData} />
+      <ExploreSlider data={exploreSliderData} />
       <section className="footer-wrapper lg:pt-20   lg:p-20" id="contact">
-        <ContactSection />
-        <FooterSection />
+        <ContactSection data={contactData} />
+        <FooterSection data={footerData} />
       </section>
     </>
   )

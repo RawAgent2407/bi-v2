@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import bgImg from '../../assets/big-img.png'
 
-const BigImgSection = () => {
+const BigImgSection = ({ data }) => {
   const [isMobile, setIsMobile] = useState(false)
+  const { images } = data
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,7 +19,10 @@ const BigImgSection = () => {
         isMobile ? '' : 'bg-fixed'
       } bg-center bg-cover`}
       style={{
-        backgroundImage: `url(${bgImg})`,
+        backgroundImage: `url(${
+          images[0]?.image ||
+          'https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/big-img.png'
+        })`,
       }}
     >
       {/* Strong visible gradient: white → transparent → black */}

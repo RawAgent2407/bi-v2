@@ -1,9 +1,21 @@
 import React from 'react'
-import { FiPhone, FiSend, FiMapPin } from 'react-icons/fi'
+import { FiPhone, FiSend } from 'react-icons/fi'
 import Button from '../Button'
 import './ContactSection.css'
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 
-const ContactSection = () => {
+const ContactSection = ({ data }) => {
+  // Provide fallback values if data is not provided
+  const title = data?.title || "Let's Connect"
+  const description =
+    data?.description || 'Have A Question, Feedback, Or Just Want To Say Hi?'
+  const contactInfo = data?.contactInfo || {
+    phone: '+91 98983 39903',
+    email: 'buildindiarealty@gmail.com',
+    address:
+      'Zion Z1, 907–908, nr. Maple County Road, off Sindhu Bhavan Marg, Bodakdev, Ahmedabad, Gujarat 380054',
+  }
+
   return (
     <div className="flex lg:p-16 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-10 sm:py-10 sm:pt-20 mob:px-5 mob:pt-10 mob:pb-14  mob:flex-col-reverse">
       {/* Left Info */}
@@ -14,32 +26,27 @@ const ContactSection = () => {
       >
         <div>
           <h2 className="text-xl sm:text-3xl mob:text-[1.25rem] font-bold text-gray-900 font-heading">
-            Let’s Connect
+            {title}
           </h2>
           <p className="text-sm mob:text-[0.875rem] text-gray-600 font-sans mt-2 leading-relaxed">
-            Have A Question, Feedback, Or Just{' '}
-            <br className="hidden sm:block" /> Want To Say Hi?
+            {description}
           </p>
         </div>
 
         <div className="space-y-4 text-sm mob:text-[0.875rem] text-gray-700">
           <div className="flex items-start gap-3 mob:gap-2">
             <FiPhone className="mt-1 text-gray-900 text-lg" />
-            <span>+91 98983 39903</span>
+            <span>{contactInfo.phone}</span>
           </div>
 
           <div className="flex items-start gap-3 mob:gap-2">
             <FiSend className="mt-1 text-gray-900 text-lg" />
-            <span>buildindiarealty@gmail.com</span>
+            <span>{contactInfo.email}</span>
           </div>
 
           <div className="flex items-start gap-3 mob:gap-2">
-            <FiMapPin className="mt-1 text-gray-900 text-lg" />
-            <span className="leading-relaxed">
-              Zion Z1, 907–908, nr. Maple County Road, <br />
-              off Sindhu Bhavan Marg, Bodakdev, <br />
-              Ahmedabad, Gujarat 380054
-            </span>
+            <LocationOnOutlinedIcon className="mt-1 text-gray-900 text-xl" />
+            <span className="leading-relaxed">{contactInfo.address}</span>
           </div>
         </div>
       </div>

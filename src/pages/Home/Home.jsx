@@ -9,6 +9,17 @@ import InvestingCardsSection from '../../components/InvestingCardsSection/Invest
 import FooterSection from '../../components/FooterSection/FooterSection'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import './Home.css'
+
+// Import JSON data
+import heroSliderData from '../../data/home/heroSlider.json'
+import exploreSliderData from '../../data/home/exploreSlider.json'
+import futureHomeData from '../../data/home/futureHomeSection.json'
+import locationData from '../../data/home/locationSection.json'
+import investingCardsData from '../../data/home/investingCardsSection.json'
+import contactData from '../../data/shared/contactSection.json'
+import footerData from '../../data/shared/footerSection.json'
+import navData from '../../data/shared/nav.json'
+
 const Home = () => {
   return (
     <div className="bg-white font-sans text-gray-900">
@@ -24,38 +35,38 @@ const Home = () => {
         <WhatsAppIcon sx={{ fontSize: 28 }} />
       </a>
 
-      <Nav />
+      <Nav data={navData} />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <HeroSlider />
+        <HeroSlider data={heroSliderData} />
       </section>
 
       {/* Explore Section */}
       <section className="">
-        <ExploreSlider />
+        <ExploreSlider data={exploreSliderData} />
       </section>
 
       {/* Future Home */}
       <section className="">
-        <FutureHomeSection />
+        <FutureHomeSection data={futureHomeData} />
       </section>
 
       {/* Location */}
       <section className="">
-        <LocationSection />
+        <LocationSection data={locationData} />
       </section>
 
       {/* Investing Cards */}
       <section className="">
-        <InvestingCardsSection />
+        <InvestingCardsSection data={investingCardsData} />
       </section>
       {/* Contact */}
       <section className="footer-wrapper lg:pt-20   lg:p-20" id="contact">
-        <ContactSection />
+        <ContactSection data={contactData} />
 
         {/* Footer */}
-        <FooterSection />
+        <FooterSection data={footerData} />
       </section>
     </div>
   )

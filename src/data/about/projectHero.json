@@ -1,0 +1,22 @@
+{
+  "title": "About Build India Realty",
+  "subtitle": "We are committed to delivering high-quality, RERA-compliant real estate developments that transform India's urban landscape.",
+  "description": "",
+  "stats": [
+    {
+      "id": 1,
+      "number": "100+",
+      "label": "Skilled Professionals"
+    },
+    {
+      "id": 2,
+      "number": "50+",
+      "label": "Unified Vision & Mission"
+    },
+    {
+      "id": 3,
+      "number": "200+",
+      "label": "Families Registered"
+    }
+  ]
+}

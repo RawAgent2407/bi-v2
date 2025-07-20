@@ -1,0 +1,48 @@
+{
+  "title": "Our Projects",
+  "subtitle": "Explore our diverse portfolio of developments",
+  "tabs": [
+    {
+      "id": 1,
+      "name": "Residential",
+      "description": "Premium residential projects",
+      "projects": [
+        {
+          "id": 1,
+          "name": "Urban Heights",
+          "location": "Dholera SIR",
+          "type": "Apartment Complex",
+          "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-2.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Commercial",
+      "description": "High-return commercial spaces",
+      "projects": [
+        {
+          "id": 3,
+          "name": "Business Park",
+          "location": "DMIC Corridor",
+          "type": "Office Complex",
+          "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-1.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Resorts",
+      "description": "Luxury hospitality projects",
+      "projects": [
+        {
+          "id": 4,
+          "name": "Rajpath Enclave",
+          "location": "Dholera SIR",
+          "type": "5-Star Resort",
+          "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-2.png"
+        }
+      ]
+    }
+  ]
+}

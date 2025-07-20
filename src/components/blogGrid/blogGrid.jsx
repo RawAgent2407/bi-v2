@@ -3,8 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom' // Import useParams an
 import Nav from '../Nav/Nav'
 import ContactSection from '../ContactSection/ContactSection'
 import FooterSection from '../FooterSection/FooterSection'
-import blogsData from '../../data/blogsData'
 import BlogHero from '../blogHero/blogHero'
+import singleBlogImg from '../../assets/hero-slide-2.png'
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa6'
+import navData from '../../data/shared/nav.json'
+
 const SingleBlog = ({ blogsData }) => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -29,7 +32,7 @@ const SingleBlog = ({ blogsData }) => {
 
   return (
     <div className="font-sans text-gray-900 bg-white min-h-screen">
-      <Nav />
+      <Nav data={navData} />
       <BlogHero />
       <main
         className=" mx-auto flex flex-col lg:flex-row gap-10 
@@ -45,17 +48,37 @@ const SingleBlog = ({ blogsData }) => {
               <div>Learn More</div>
             </div>
             <div className="flex gap-4 text-xl text-gray-800">
-              <span className="hover:text-black cursor-pointer">🖂</span>
-              <span className="hover:text-black cursor-pointer">✖</span>
-              <span className="hover:text-black cursor-pointer">✉</span>
-              <span className="hover:text-black cursor-pointer">in</span>
+              <a
+                href="https://www.facebook.com/BuildIndiaRealty"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebook size={22} />
+              </a>
+              <a
+                href="https://www.instagram.com/buildindiarealty/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={22} />
+              </a>
+              <a
+                href="https://www.youtube.com/@buildindiarealty4226"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <FaYoutube size={22} />
+              </a>
             </div>
           </div>
         </aside>
         <div className="lg:w-4/5 w-full">
           <div className="w-full rounded-lg overflow-hidden mb-6 max-h-[70dvh] flex items-center justify-center">
             <img
-              src={blog.image}
+              src={singleBlogImg}
               alt={blog.title}
               className="w-full h-auto object-cover rounded"
             />
@@ -120,18 +143,6 @@ const SingleBlog = ({ blogsData }) => {
   )
 }
 
-const tags = [
-  'All',
-  'Foundational topics',
-  'Research and Engineering',
-  'Product',
-  'Developers',
-  'Announcements',
-  'Understanding World',
-  'Policy',
-  'How To',
-]
-
 const BlogGrid = () => {
   const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true)
@@ -172,6 +183,18 @@ const BlogGrid = () => {
 
     generateBlogPosts()
   }, [])
+
+  const tags = [
+    'All',
+    'Foundational topics',
+    'Research and Engineering',
+    'Product',
+    'Developers',
+    'Announcements',
+    'Understanding World',
+    'Policy',
+    'How To',
+  ]
 
   return (
     <section className="w-full sm:px-10 lg:px-36 py-10 bg-white mob:px-5 mob:py-10 sm:px-10">

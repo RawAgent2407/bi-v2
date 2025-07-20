@@ -1,0 +1,78 @@
+{
+  "logo": {
+    "text": "Build India",
+    "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/react.svg"
+  },
+  "menuItems": [
+    {
+      "id": 1,
+      "title": "Home",
+      "url": "/",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "title": "About",
+      "url": "/about",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "title": "Projects",
+      "url": "/projects",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "title": "Blog",
+      "url": "/blog",
+      "isActive": false
+    }
+  ],
+  "ctaButton": {
+    "text": "Take A Virtual Tour",
+    "url": "https://buildindiagroup.co.in/#/login"
+  },
+  "mobileMenu": {
+    "toggleText": "Menu",
+    "closeText": "Close"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog1.jpg",
+      "title": "Dholera SIR",
+      "location": "Green City",
+      "price": "₹ 4.3-8.5Cr",
+      "link": "Internal Connectivity",
+      "overlayText": "Office Space"
+    },
+    {
+      "id": 2,
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog2.jpg",
+      "title": "Rajpath Enclave",
+      "location": "Dholera",
+      "price": "₹ 4.3-8.5Cr",
+      "link": "Ease Of Governance",
+      "overlayText": "Rajpath Enclave"
+    },
+    {
+      "id": 3,
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog1.jpg",
+      "title": "Dholera SIR II",
+      "location": "Green City",
+      "price": "₹ 5.1-9.2Cr",
+      "link": "Internal Connectivity",
+      "overlayText": "Office Space"
+    },
+    {
+      "id": 4,
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog2.jpg",
+      "title": "Rajpath Enclave II",
+      "location": "Dholera",
+      "price": "₹ 6.3-10.5Cr",
+      "link": "Ease Of Governance",
+      "overlayText": "Rajpath Enclave"
+    }
+  ]
+}
