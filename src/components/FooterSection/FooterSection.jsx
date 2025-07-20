@@ -154,6 +154,8 @@ const FooterSection = ({ data }) => {
           </div>
         </div>
 
+        {/* Contact Info Row */}
+
         {/* Bottom Bar */}
         <div className="flex flex-row flex-wrap justify-between items-center  text-xs text-gray-800 gap-y-2">
           <p className="mob:text-center mob:w-full">

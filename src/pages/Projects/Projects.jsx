@@ -13,11 +13,12 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 // Import JSON data
 import projectHeroData from '../../data/projects/projectHero.json'
-import impactData from '../../data/about/impactSection.json'
-import visionData from '../../data/about/visionSection.json'
+import impactData from '../../data/projects/impactSection.json'
+import visionData from '../../data/projects/visionSection.json'
 import tabsData from '../../data/projects/tabsSection.json'
 import bigImgData from '../../data/projects/bigImgSection.json'
-import futureHomeData from '../../data/home/futureHomeSection.json'
+import futureHomeData from '../../data/projects/futureHomeSection.json'
+import futureHomeData2 from '../../data/projects/futureHomeSection2.json'
 import bigVideoData from '../../data/projects/bigVideoSection.json'
 import navData from '../../data/shared/nav.json'
 
@@ -39,7 +40,10 @@ function Projects() {
       <VisionSection data={visionData} />
       <TabsSection data={tabsData} />
       <BigImgSection data={bigImgData} />
-      <FutureHomeSection data={futureHomeData} />
+      <div className="lg:my-10">
+        <FutureHomeSection data={futureHomeData} />
+        <FutureHomeSection data={futureHomeData2} />
+      </div>
       <BigVideoSection data={bigVideoData} />
       <section
         className="footer-wrapper lg:pt-20 dark-footer-wrapper   "

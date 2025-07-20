@@ -40,37 +40,19 @@
   "projects": [
     {
       "id": 1,
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog1.jpg",
-      "title": "Dholera SIR",
-      "location": "Green City",
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/home-slider/slide-1.png",
+      "title": "Rajpath Grand",
+      "location": "Dholera",
       "price": "₹ 4.3-8.5Cr",
       "link": "Internal Connectivity",
       "overlayText": "Office Space"
     },
     {
       "id": 2,
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog2.jpg",
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/home-slider/slide-2.jpg",
       "title": "Rajpath Enclave",
       "location": "Dholera",
       "price": "₹ 4.3-8.5Cr",
-      "link": "Ease Of Governance",
-      "overlayText": "Rajpath Enclave"
-    },
-    {
-      "id": 3,
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog1.jpg",
-      "title": "Dholera SIR II",
-      "location": "Green City",
-      "price": "₹ 5.1-9.2Cr",
-      "link": "Internal Connectivity",
-      "overlayText": "Office Space"
-    },
-    {
-      "id": 4,
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/blog2.jpg",
-      "title": "Rajpath Enclave II",
-      "location": "Dholera",
-      "price": "₹ 6.3-10.5Cr",
       "link": "Ease Of Governance",
       "overlayText": "Rajpath Enclave"
     }

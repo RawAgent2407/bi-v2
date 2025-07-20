@@ -1,13 +1,13 @@
 {
-  "title": "More Than Buildings",
-  "description": "We’re not just developers. We’re curators of community, catalysts for growth, and champions of a smarter India. Whether it’s a residential enclave or a commercial corridor, every Build India project stands for quality, utility, and design excellence.",
-  "bgImg": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/about-hero/vision.jpg",
+  "title": "Explore the Enclave in Motion",
+  "description": "See how Rajpath Enclave is shaping the future  through real visuals of progress, infrastructure, and community growth across both phases.",
+  "bgImg": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/project/vision.jpg",
   "visionPoints": [
     {
       "id": 1,
       "title": "Smart Cities",
       "description": "Building intelligent urban spaces with integrated technology",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/about-hero/vision.jpg"
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/project/vision.jpg"
     },
     {
       "id": 2,

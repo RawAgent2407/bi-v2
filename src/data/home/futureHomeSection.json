@@ -1,7 +1,7 @@
 {
   "title": "Step Inside, Virtually",
   "subtitle": "Strategically Connected & Seamlessly Accessible.",
-  "description": "Experience our developments like never before. Walk through townships, view amenities, and get a real sense of space  — all from the comfort of your screen. CTA: [Launch VR Tour]",
+  "description": "Experience our developments like never before. Walk through townships, view amenities, and get a real sense of space  — all from the comfort of your screen.",
   "description2": "Connectivity is everything. That’s why every BI Realty project is placed with foresight — near expressways, metro lines, and future infrastructure zones. You're not just buying land. You're buying tomorrow's center.",
   "features": [
     {
@@ -24,22 +24,22 @@
     {
       "name": "Corporate Building",
       "description": "At The Heart Of Dholera’s Emerging Business Zone",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-1.png"
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/tab/tab-1.jpg"
     },
     {
       "name": "International Airport",
       "description": "Global Gateway Just Minutes From Your Plot",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-2.png"
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/tab/tab-2.jpg"
     },
     {
       "name": "Solar Park",
       "description": "Near India’s Largest Renewable Energy Hub.",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/vision.png"
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/tab/tab-3.jpg"
     },
     {
       "name": "6-Lane Expressway & Monorail",
       "description": "Seamless High-Speed Links To Major Corridors",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-1.png"
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/tab/tab-4.jpg"
     }
   ]
 }

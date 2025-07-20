@@ -5,7 +5,6 @@ import './ContactSection.css'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 
 const ContactSection = ({ data }) => {
-  // Provide fallback values if data is not provided
   const title = data?.title || "Let's Connect"
   const description =
     data?.description || 'Have A Question, Feedback, Or Just Want To Say Hi?'
@@ -17,13 +16,9 @@ const ContactSection = ({ data }) => {
   }
 
   return (
-    <div className="flex lg:p-16 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-10 sm:py-10 sm:pt-20 mob:px-5 mob:pt-10 mob:pb-14  mob:flex-col-reverse">
+    <div className="flex lg:p-16 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-10 sm:py-10 sm:pt-20 mob:px-5 mob:pt-10 mob:pb-14 mob:flex-col-reverse">
       {/* Left Info */}
-      <div
-        className=" lg:p-12 lg:p-20 lg:space-y-8 border-b md:border-b-0 lg:border-r 
-        sm:w-full sm:bg-white mob:bg-white sm:py-16 sm:px-10 mob:p-8 sm:gap-8 
-        sm:flex sm:flex-col sm:items-start sm:justify-start mob:p-5 mob:gap-6 mob:flex mob:flex-col mob:items-start  lg:w-[45%] "
-      >
+      <div className="lg:p-20 lg:space-y-8 border-b md:border-b-0 lg:border-r sm:w-full sm:bg-white mob:bg-white sm:py-16 sm:px-10 mob:p-5 mob:gap-6 mob:flex mob:flex-col mob:items-start lg:w-[45%]">
         <div>
           <h2 className="text-xl sm:text-3xl mob:text-[1.25rem] font-bold text-gray-900 font-heading">
             {title}
@@ -34,27 +29,49 @@ const ContactSection = ({ data }) => {
         </div>
 
         <div className="space-y-4 text-sm mob:text-[0.875rem] text-gray-700">
+          {/* Phone */}
           <div className="flex items-start gap-3 mob:gap-2">
             <FiPhone className="mt-1 text-gray-900 text-lg" />
-            <span>{contactInfo.phone}</span>
+            <a
+              href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
+              className="hover:underline break-all"
+            >
+              {contactInfo.phone}
+            </a>
           </div>
 
+          {/* Email */}
           <div className="flex items-start gap-3 mob:gap-2">
             <FiSend className="mt-1 text-gray-900 text-lg" />
-            <span>{contactInfo.email}</span>
+            <a
+              href={`mailto:${contactInfo.email}`}
+              className="hover:underline break-all"
+            >
+              {contactInfo.email}
+            </a>
           </div>
 
+          {/* Address */}
           <div className="flex items-start gap-3 mob:gap-2">
             <LocationOnOutlinedIcon className="mt-1 text-gray-900 text-xl" />
-            <span className="leading-relaxed">{contactInfo.address}</span>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                contactInfo.address,
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <span className="leading-relaxed">{contactInfo.address}</span>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Right Form */}
-      <div className="bg-[#E7E5E2] sm:py-16 sm:px-10 lg:p-12 lg:p-16 lg:w-[55%] sm:w-full mob:p-8 mob:pt-10">
+      <div className="bg-[#E7E5E2] sm:py-16 sm:px-10 lg:p-16 lg:w-[55%] sm:w-full mob:p-8 mob:pt-10">
         <form className="space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:gap-4 sm:gap-2  mob:gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:gap-4 sm:gap-2 mob:gap-3">
             <input
               type="text"
               placeholder="FIRST NAME"
@@ -89,8 +106,8 @@ const ContactSection = ({ data }) => {
           </div>
 
           <button
-            className="
-              lg:inline-flex lg:items-center lg:justify-center 
+            type="submit"
+            className="lg:inline-flex lg:items-center lg:justify-center 
               lg:gap-[0.625rem] lg:rounded-[0.125rem] 
               lg:px-8 lg:py-3 lg:h-fit lg:w-fit 
               bg-[#161616] text-white 
@@ -98,8 +115,7 @@ const ContactSection = ({ data }) => {
               transition-all duration-300 ease-in-out 
               cursor-pointer border-0 outline-none
               sm:px-5 sm:py-3 sm:text-lg sm:w-full
-              mob:px-4 mob:py-3 mob:text-base mob:w-full
-            "
+              mob:px-4 mob:py-3 mob:text-base mob:w-full"
           >
             Submit
           </button>

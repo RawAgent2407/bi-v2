@@ -4,16 +4,13 @@ import { FaGlobe } from 'react-icons/fa'
 import { FaHouseUser } from 'react-icons/fa6'
 
 const ProjectHero = ({ data }) => {
-  const { title, subtitle, stats } = data
+  const { title, subtitle, stats, img } = data
 
   return (
     <section
       className="relative w-full lg:h-[100dvh] mob:h-[100dvh] sm:h-[100dvh] bg-cover bg-center text-white flex items-center justify-center"
       style={{
-        backgroundImage: `url(${
-          stats[0]?.image ||
-          'https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-1.png'
-        })`,
+        backgroundImage: `url(${img})`,
       }}
     >
       {/* Dark Overlay */}
@@ -50,7 +47,7 @@ const ProjectHero = ({ data }) => {
       <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 w-full  px-4 z-10 mob:bottom-10 lg:w-[50%] mob:w-full mob:px-0">
         <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
           <div className="flex flex-col items-center gap-1">
-            <p className="text-white text-xl sm:text-3xl font-bold mob:text-2xl ">
+            <p className="text-white text-xl sm:text-3xl font-regular mob:text-2xl ">
               {stats[0]?.number || '100+'}
             </p>
             <span
@@ -78,7 +75,7 @@ const ProjectHero = ({ data }) => {
             </span>
           </div>
           <div className="flex flex-col items-center gap-1">
-            <p className="text-white text-xl sm:text-3xl font-bold mob:text-2xl">
+            <p className="text-white text-xl sm:text-3xl font-regular mob:text-2xl">
               {stats[2]?.number || '200+'}
             </p>
             <span

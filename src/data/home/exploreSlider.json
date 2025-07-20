@@ -5,28 +5,14 @@
       "category": "Resorts",
       "title": "Rajpath Enclave",
       "subtitle": "A blend of architectural elegance and strategic location, Rajpath Enclave stands as a testament to our vision for smarter living. Surrounded by modern infrastructure and natural beauty.",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/ex-slide-1.png"
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/ex-slider/slide-1.png"
     },
     {
       "id": 2,
       "category": "Resorts",
       "title": "Rajpath grand",
-      "subtitle": "Strategically placed near Dholera Express Highway, Rajpath grand offers high-appreciation plots designed for smart investors seeking long-term growth.",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-2.png"
-    },
-    {
-      "id": 3,
-      "category": "Resorts",
-      "title": "Rajpath Enclave",
-      "subtitle": "A blend of architectural elegance and strategic location, Rajpath Enclave stands as a testament to our vision for smarter living. Surrounded by modern infrastructure and natural beauty.",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/ex-slide-1.png"
-    },
-    {
-      "id": 4,
-      "category": "Resorts",
-      "title": "Rajpath grand",
-      "subtitle": "Strategically placed near Dholera Express Highway, Rajpath grand offers high-appreciation plots designed for smart investors seeking long-term growth.",
-      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/hero-slide-2.png"
+      "subtitle": "Located near Dholera Express Highway, Rajpath Grand offers high-appreciation plots designed for smart investors seeking long-term growth. A perfect harmony of location, value, and vision.",
+      "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/ex-slider/slide-2.jpg"
     }
   ]
 }

@@ -10,7 +10,7 @@ const BigVideoSection = ({ data }) => {
 
   return (
     <section
-      className="relative w-full bg-cover bg-center"
+      className="relative w-full bg-cover bg-center mob:mt-10 "
       style={{
         backgroundImage: `url(${
           videos[0]?.thumbnail ||
