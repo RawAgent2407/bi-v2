@@ -25,9 +25,9 @@ const FutureHomeSection = ({ data }) => {
             <h2
               className="
                 lg:text-xl font-heading font-regular text-black
-                lg:h-[3.375rem] lg:pt-[1rem] lg:pb-[0.5rem]
-                sm:text-2xl  sm:h-[2.375rem] sm:pt-[0.5rem] sm:pb-[0.25rem]
-                mob:text-2xl mob:h-[2.375rem] mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4
+               lg:pt-[1rem] lg:pb-[0.5rem]
+                sm:text-2xl  sm:pt-[0.5rem] sm:pb-[0.25rem]
+                mob:text-2xl mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4
               "
             >
               {title}
@@ -75,9 +75,9 @@ const FutureHomeSection = ({ data }) => {
               <h2
                 className="
                   lg:text-xl font-heading font-regular text-black
-                  lg:h-[3.375rem] lg:pt-[0rem] lg:pb-[0rem]
-                  sm:text-2xl  sm:h-[2.375rem] sm:pt-[0.5rem] sm:pb-[0.25rem]
-                  mob:text-2xl mob:h-[2.375rem] mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4
+                  lg:pt-[0rem] lg:pb-[0rem]
+                  sm:text-2xl  sm:pt-[0.5rem] sm:pb-[0.25rem]
+                  mob:text-2xl  mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4
                 "
               >
                 {subtitle}

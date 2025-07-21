@@ -1,14 +1,20 @@
 import React from 'react'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // Import Swiper components and styles
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-const ProjectDrawer = ({ data }) => {
+const ProjectDrawer = ({ data, onClose }) => {
   const { projects } = data
+  const navigate = useNavigate()
+
+  const handleCardClick = () => {
+    navigate('/projects')
+    if (onClose) onClose()
+  }
 
   return (
     <div className="fixed top-[64px] left-0 w-screen bg-white z-40 shadow-md">
@@ -60,7 +66,15 @@ const ProjectDrawer = ({ data }) => {
             {projects.map((project, idx) => (
               <SwiperSlide key={idx} style={{ height: 'auto' }}>
                 {/* The card component's classes are UNCHANGED */}
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all  h-full">
+                <div
+                  className="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all h-full cursor-pointer"
+                  onClick={handleCardClick}
+                  role="button"
+                  tabIndex={0}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') handleCardClick()
+                  }}
+                >
                   <div className="relative h-[220px]">
                     <img
                       src={project.image}

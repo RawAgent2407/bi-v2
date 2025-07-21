@@ -21,6 +21,7 @@ import futureHomeData from '../../data/projects/futureHomeSection.json'
 import futureHomeData2 from '../../data/projects/futureHomeSection2.json'
 import bigVideoData from '../../data/projects/bigVideoSection.json'
 import navData from '../../data/shared/nav.json'
+import AmenitiesSection from '../../components/AmenitiesSection'
 
 function Projects() {
   return (
@@ -39,7 +40,8 @@ function Projects() {
       <ImpactSection data={impactData} />
       <VisionSection data={visionData} />
       <TabsSection data={tabsData} />
-      <BigImgSection data={bigImgData} />
+      {/* <BigImgSection data={bigImgData} /> */}
+      <AmenitiesSection />
       <div className="lg:my-10">
         <FutureHomeSection data={futureHomeData} />
         <FutureHomeSection data={futureHomeData2} />
