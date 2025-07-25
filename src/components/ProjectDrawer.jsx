@@ -59,7 +59,7 @@ const ProjectDrawer = ({ data, onClose }) => {
         {/* Project Cards in a Swiper */}
         <div className="flex-1 overflow-hidden">
           <Swiper
-            slidesPerView={2}
+            slidesPerView={3}
             spaceBetween={24} // This is equivalent to gap-6 in Tailwind (6 * 4px)
             className="mySwiper"
           >
