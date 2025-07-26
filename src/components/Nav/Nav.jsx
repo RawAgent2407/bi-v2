@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Button from '../Button'
 import './NavCustom.css'
@@ -7,12 +7,20 @@ import CloseIcon from '@mui/icons-material/Close'
 import ProjectDrawer from '../ProjectDrawer'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
 
 const Nav = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isProjectDrawerOpen, setIsProjectDrawerOpen] = useState(false) // Changed from isProjectHovered
+  const [isProjectDrawerOpen, setIsProjectDrawerOpen] = useState(false)
   const [isMobileProjectOpen, setIsMobileProjectOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const navRef = useRef(null)
 
   const { logo, ctaButton, mobileMenu, projects } = data || {}
 
@@ -22,19 +30,283 @@ const Nav = ({ data }) => {
     window.scrollTo(0, 0)
   }, [location])
 
+  // GSAP Scroll Trigger for all screen sizes - EXCLUDING blog page
+  useEffect(() => {
+    const nav = navRef.current
+    if (!nav) return
+
+    // Check if we're on the blog page
+    const isBlogPage =
+      location.pathname === '/blog' || location.pathname.startsWith('/blog/')
+
+    if (isBlogPage) {
+      // Blog page - always white background with dark text
+      gsap.set(nav, {
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        color: '#323232',
+      })
+      setIsScrolled(true)
+      return
+    }
+
+    // Initial state - transparent with white text (for non-blog pages)
+    gsap.set(nav, {
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      color: 'white',
+    })
+
+    // Scroll trigger for all screen sizes - only for non-blog pages
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: 'body',
+      start: 'top top',
+      end: '+=100',
+      onUpdate: (self) => {
+        const progress = self.progress
+
+        if (!isBlogPage) {
+          if (progress > 0) {
+            // Scrolled - white background with dark text
+            gsap.set(nav, {
+              backgroundColor: 'rgba(255, 255, 255, 1)',
+              color: '#323232',
+            })
+            setIsScrolled(true)
+          } else {
+            // At top - transparent with white text
+            gsap.set(nav, {
+              backgroundColor: 'rgba(0, 0, 0, 0)',
+              color: 'white',
+            })
+            setIsScrolled(false)
+          }
+        }
+      },
+      //markers: true, // Show scroll trigger markers
+    })
+
+    // Cleanup
+    return () => {
+      scrollTrigger.kill()
+    }
+  }, [location.pathname])
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const isBlogPage = location.pathname === '/blog'
+
+      if (isBlogPage) {
+        // Blog page - always white with dark text
+        gsap.set(navRef.current, {
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          color: '#323232',
+        })
+      } else {
+        // Non-blog pages - check scroll position to determine state
+        const scrollY = window.scrollY
+        if (scrollY > 0) {
+          // Scrolled - white background
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            color: '#323232',
+          })
+          setIsScrolled(true)
+        } else {
+          // At top - transparent background
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: 'white',
+          })
+          setIsScrolled(false)
+        }
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize() // Initial call
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [location.pathname])
+
+  // Handle scroll to close mobile menu and project drawer
+  useEffect(() => {
+    const handleScroll = () => {
+      // Close mobile menu if open
+      if (isOpen) {
+        setIsOpen(false)
+        setIsMobileMenuOpen(false)
+        setIsMobileProjectOpen(false)
+
+        // Return nav to appropriate state based on scroll position
+        const isBlogPage =
+          location.pathname === '/blog' ||
+          location.pathname.startsWith('/blog/')
+        const scrollY = window.scrollY
+
+        if (isBlogPage) {
+          // Blog page - stay white
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            color: '#323232',
+          })
+          setIsScrolled(true)
+        } else if (scrollY > 0) {
+          // Other pages and scrolled - stay white
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            color: '#323232',
+          })
+          setIsScrolled(true)
+        } else {
+          // Other pages and at top - return to transparent
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: 'white',
+          })
+          setIsScrolled(false)
+        }
+      }
+
+      // Close project drawer if open
+      if (isProjectDrawerOpen) {
+        setIsProjectDrawerOpen(false)
+
+        // Return nav to appropriate state based on scroll position
+        const isBlogPage =
+          location.pathname === '/blog' ||
+          location.pathname.startsWith('/blog/')
+        const scrollY = window.scrollY
+
+        if (isBlogPage) {
+          // Blog page - stay white
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            color: '#323232',
+          })
+          setIsScrolled(true)
+        } else if (scrollY > 0) {
+          // Other pages and scrolled - stay white
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            color: '#323232',
+          })
+          setIsScrolled(true)
+        } else {
+          // Other pages and at top - return to transparent
+          gsap.set(navRef.current, {
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: 'white',
+          })
+          setIsScrolled(false)
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isOpen, isProjectDrawerOpen, location.pathname])
+
   const toggleMobileMenu = () => {
-    setIsOpen(!isOpen)
-    if (isOpen) {
+    const newState = !isOpen
+    setIsOpen(newState)
+    setIsMobileMenuOpen(newState)
+
+    const isBlogPage = location.pathname === '/blog'
+
+    if (newState) {
+      // Mobile menu opened - change to white background with dark text
+      gsap.set(navRef.current, {
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        color: '#323232',
+      })
+    } else {
+      // Mobile menu closed - back to appropriate state based on page and scroll
+      const scrollY = window.scrollY
+
+      if (isBlogPage) {
+        // Blog page - stay white
+        gsap.set(navRef.current, {
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          color: '#323232',
+        })
+        setIsScrolled(true)
+      } else if (scrollY > 0) {
+        // Other pages and scrolled - stay white
+        gsap.set(navRef.current, {
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          color: '#323232',
+        })
+        setIsScrolled(true)
+      } else {
+        // Other pages and at top - return to transparent
+        gsap.set(navRef.current, {
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          color: 'white',
+        })
+        setIsScrolled(false)
+      }
       setIsMobileProjectOpen(false)
     }
   }
+
+  const handleProjectClick = () => {
+    const newDrawerState = !isProjectDrawerOpen
+    setIsProjectDrawerOpen(newDrawerState)
+
+    if (newDrawerState) {
+      // When projects drawer opens, change to white background with dark text
+      gsap.set(navRef.current, {
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        color: '#323232',
+      })
+      // Force update the scrolled state to ensure dark fonts
+      setIsScrolled(true)
+    } else {
+      // When projects drawer closes, return to appropriate state based on current page and scroll position
+      const isBlogPage = location.pathname === '/blog'
+      const scrollY = window.scrollY
+
+      if (isBlogPage) {
+        // Blog page - stay white
+        gsap.set(navRef.current, {
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          color: '#323232',
+        })
+        setIsScrolled(true)
+      } else if (scrollY > 0) {
+        // Other pages and scrolled - stay white
+        gsap.set(navRef.current, {
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          color: '#323232',
+        })
+        setIsScrolled(true)
+      } else {
+        // Other pages and at top - return to transparent
+        gsap.set(navRef.current, {
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          color: 'white',
+        })
+        setIsScrolled(false)
+      }
+    }
+  }
+
+  // Check if we're on blog page
+  const isBlogPage =
+    location.pathname === '/blog' || location.pathname.startsWith('/blog/')
 
   // Desktop nav links hardcoded
   return (
     <>
       <nav
-        className="bg-white shadow-sm font-sans fixed w-full left-0 top-0 z-50"
-        // Remove onMouseLeave for desktop drawer
+        ref={navRef}
+        className="fixed w-full left-0 top-0 z-50 font-sans"
+        style={{
+          backgroundColor: isBlogPage
+            ? 'rgba(255, 255, 255, 1)'
+            : 'rgba(0, 0, 0, 0)',
+          color: isBlogPage ? '#323232' : 'white',
+        }}
       >
         <div className="mx-auto lg:px-36 sm:px-10 mob:py-1 mob:px-4">
           <div className="relative flex items-center justify-between h-16">
@@ -42,7 +314,11 @@ const Nav = ({ data }) => {
             <div className="flex-shrink-0">
               <Link
                 to="/"
-                className="text-2xl font-bold text-[#323232] tracking-tight font-heading"
+                className={`text-2xl font-bold tracking-tight font-heading transition-colors duration-300 ${
+                  isScrolled || isMobileMenuOpen || isBlogPage
+                    ? 'text-[#323232]'
+                    : 'text-white'
+                }`}
               >
                 {logo?.text || 'Build India'}
               </Link>
@@ -55,22 +331,28 @@ const Nav = ({ data }) => {
                   text="Home"
                   to="/"
                   isActive={location.pathname === '/'}
+                  isScrolled={isScrolled}
+                  isBlogPage={isBlogPage}
                 />
                 <NavLink
                   text="About"
                   to="/about"
                   isActive={location.pathname === '/about'}
+                  isScrolled={isScrolled}
+                  isBlogPage={isBlogPage}
                 />
                 {/* Projects as text with drawer on click */}
                 <div className="relative flex items-center">
                   <button
                     type="button"
-                    className={`inline-flex items-center w-fit h-[2.25rem] px-[0.875rem] py-[0.375rem] rounded-[0.25rem] text-base font-medium transition duration-300 ease-in-out text-gray-500 hover:text-gray-700 hover:bg-gray-50 ${
+                    className={`inline-flex items-center w-fit h-[2.25rem] px-[0.875rem] py-[0.375rem] rounded-[0.25rem] text-base font-medium transition duration-300 ease-in-out ${
                       location.pathname === '/projects'
                         ? 'bg-white border border-[#00000014] shadow-sm text-gray-800'
-                        : ''
+                        : isScrolled || isBlogPage
+                        ? 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                        : 'text-white hover:text-gray-200 hover:bg-white hover:bg-opacity-10'
                     }`}
-                    onClick={() => setIsProjectDrawerOpen((open) => !open)}
+                    onClick={handleProjectClick}
                   >
                     Projects
                   </button>
@@ -79,6 +361,8 @@ const Nav = ({ data }) => {
                   text="Blog"
                   to="/blog"
                   isActive={location.pathname === '/blog'}
+                  isScrolled={isScrolled}
+                  isBlogPage={isBlogPage}
                 />
               </div>
             </div>
@@ -88,10 +372,16 @@ const Nav = ({ data }) => {
               <a
                 href={ctaButton?.url || '#'}
                 target="_blank"
-                className="group inline-flex items-center justify-end text-[#353B3B] text-[1.125rem] leading-[1.75rem] tracking-[-0.02em] font-medium font-[Onest] capitalize relative transition duration-300 ease-in-out"
+                className={`group inline-flex items-center justify-end text-[1.125rem] leading-[1.75rem] tracking-[-0.02em] font-medium font-[Onest] capitalize relative transition duration-300 ease-in-out ${
+                  isScrolled || isBlogPage ? 'text-[#353B3B]' : 'text-white'
+                }`}
               >
                 {ctaButton?.text || 'Take A Virtual Tour'}
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#353B3B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+                <span
+                  className={`absolute -bottom-1 left-0 w-full h-[2px] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out ${
+                    isScrolled || isBlogPage ? 'bg-[#353B3B]' : 'bg-white'
+                  }`}
+                ></span>
               </a>
             </div>
 
@@ -99,13 +389,19 @@ const Nav = ({ data }) => {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={toggleMobileMenu}
-                className="p-2 rounded-md hover:bg-gray-100 cursor-pointer transition duration-200"
+                className="p-2 rounded-md hover:bg-white hover:bg-opacity-10 cursor-pointer transition duration-200"
               >
                 <span className="sr-only">
                   {mobileMenu?.toggleText || 'Toggle menu'}
                 </span>
                 {!isOpen ? (
-                  <MenuIcon className="text-[1.75rem] text-gray-700" />
+                  <MenuIcon
+                    className={`text-[1.75rem] transition-colors duration-300 ${
+                      isScrolled || isMobileMenuOpen || isBlogPage
+                        ? 'text-gray-700'
+                        : 'text-white'
+                    }`}
+                  />
                 ) : (
                   <CloseIcon className="text-[1.75rem] text-gray-700" />
                 )}
@@ -140,7 +436,7 @@ const Nav = ({ data }) => {
                           {projects?.map((project) => (
                             <Link
                               key={project.id}
-                              to={'/projects'}
+                              to={project.url}
                               onClick={() => setIsOpen(false)}
                               className="flex justify-between items-center px-3 py-1 text-sm font-medium text-gray-600 hover:text-black rounded-md"
                             >
@@ -194,7 +490,7 @@ const Nav = ({ data }) => {
   )
 }
 
-const NavLink = ({ text, to, isActive }) => (
+const NavLink = ({ text, to, isActive, isScrolled, isBlogPage }) => (
   <Link
     to={to}
     className={`
@@ -203,7 +499,9 @@ const NavLink = ({ text, to, isActive }) => (
       ${
         isActive
           ? 'bg-white border border-[#00000014] shadow-sm text-gray-800'
-          : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+          : isScrolled || isBlogPage
+          ? 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+          : 'text-white hover:text-gray-200 hover:bg-white hover:bg-opacity-10'
       }
     `}
   >

@@ -11,8 +11,8 @@ const ProjectDrawer = ({ data, onClose }) => {
   const { projects } = data
   const navigate = useNavigate()
 
-  const handleCardClick = () => {
-    navigate('/projects')
+  const handleCardClick = (projectUrl) => {
+    navigate(projectUrl)
     if (onClose) onClose()
   }
 
@@ -68,11 +68,11 @@ const ProjectDrawer = ({ data, onClose }) => {
                 {/* The card component's classes are UNCHANGED */}
                 <div
                   className="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all h-full cursor-pointer"
-                  onClick={handleCardClick}
+                  onClick={() => handleCardClick(project.url)}
                   role="button"
                   tabIndex={0}
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter') handleCardClick()
+                    if (e.key === 'Enter') handleCardClick(project.url)
                   }}
                 >
                   <div className="relative h-[220px]">

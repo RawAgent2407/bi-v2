@@ -45,7 +45,8 @@
       "location": "Dholera",
       "price": "₹ 4.3-8.5Cr",
       "link": "Internal Connectivity",
-      "overlayText": "Office Space"
+      "overlayText": "Office Space",
+      "url": "/projects/rajpath-grand"
     },
     {
       "id": 2,
@@ -54,7 +55,8 @@
       "location": "Dholera",
       "price": "₹ 4.3-8.5Cr",
       "link": "Ease Of Governance",
-      "overlayText": "Rajpath Enclave"
+      "overlayText": "Rajpath Enclave",
+      "url": "/projects/rajpath-enclave"
     },
     {
       "id": 3,
@@ -63,7 +65,8 @@
       "location": "Dholera",
       "price": "₹ 3.8-7.2Cr",
       "link": "Modern Amenities",
-      "overlayText": "Premium Residences"
+      "overlayText": "Premium Residences",
+      "url": "/projects/rajpath-heights"
     }
   ]
 }

@@ -7,6 +7,9 @@ import Blog from './pages/blog/blog'
 import { SingleBlog } from './components/blogGrid/blogGrid'
 import blogsData from './data/blogsData'
 import About from './pages/About/About'
+import RajpathGrand from './pages/Projects/RajpathGrand'
+import RajpathEnclave from './pages/Projects/RajpathEnclave'
+import RajpathHeights from './pages/Projects/RajpathHeights'
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/rajpath-grand" element={<RajpathGrand />} />
+        <Route path="/projects/rajpath-enclave" element={<RajpathEnclave />} />
+        <Route path="/projects/rajpath-heights" element={<RajpathHeights />} />
         <Route path="/blog" element={<Blog />} />
         <Route
           path="/blog/:id"

@@ -31,9 +31,8 @@ const SingleBlog = ({ blogsData }) => {
   }
 
   return (
-    <div className="font-sans text-gray-900 bg-white min-h-screen">
+    <div className="font-sans text-gray-900 bg-white min-h-screen mt-[10vh]">
       <Nav data={navData} />
-      <BlogHero />
       <main
         className=" mx-auto flex flex-col lg:flex-row gap-10 
       sm:px-12 lg:px-36 lg:pb-20 lg:pt-0 sm:py-14 mob:px-5 mob:my-10 bg-white

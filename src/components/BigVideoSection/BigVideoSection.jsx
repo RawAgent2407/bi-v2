@@ -58,12 +58,12 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
     }))
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }))
+      setErrors((prev) => ({ ...prev, [name]: '' }))
     }
   }
 
@@ -74,7 +74,7 @@ const ContactForm = () => {
     setIsSubmitting(true)
     try {
       console.log('Form submitted:', formData)
-      alert('Thank you for your message! We\'ll get back to you soon.')
+      alert("Thank you for your message! We'll get back to you soon.")
       setFormData({
         firstName: '',
         lastName: '',
@@ -103,10 +103,14 @@ const ContactForm = () => {
             value={formData.firstName}
             onChange={handleChange}
             className={`w-full border text-sm mob:text-base px-4 py-3 rounded outline-none focus:ring-1 bg-white ${
-              errors.firstName ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-black'
+              errors.firstName
+                ? 'border-red-500 focus:ring-red-500'
+                : 'border-gray-300 focus:ring-black'
             }`}
           />
-          {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+          {errors.firstName && (
+            <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
+          )}
         </div>
         <div>
           <input
@@ -116,10 +120,14 @@ const ContactForm = () => {
             value={formData.lastName}
             onChange={handleChange}
             className={`w-full border text-sm mob:text-base px-4 py-3 rounded outline-none focus:ring-1 bg-white ${
-              errors.lastName ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-black'
+              errors.lastName
+                ? 'border-red-500 focus:ring-red-500'
+                : 'border-gray-300 focus:ring-black'
             }`}
           />
-          {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
+          {errors.lastName && (
+            <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>
+          )}
         </div>
       </div>
 
@@ -131,10 +139,14 @@ const ContactForm = () => {
           value={formData.mobile}
           onChange={handleChange}
           className={`w-full border text-sm mob:text-base px-4 py-3 rounded outline-none focus:ring-1 bg-white ${
-            errors.mobile ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-black'
+            errors.mobile
+              ? 'border-red-500 focus:ring-red-500'
+              : 'border-gray-300 focus:ring-black'
           }`}
         />
-        {errors.mobile && <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>}
+        {errors.mobile && (
+          <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>
+        )}
       </div>
 
       <div>
@@ -145,10 +157,14 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           className={`w-full border text-sm mob:text-base px-4 py-3 rounded outline-none focus:ring-1 bg-white ${
-            errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-black'
+            errors.email
+              ? 'border-red-500 focus:ring-red-500'
+              : 'border-gray-300 focus:ring-black'
           }`}
         />
-        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+        {errors.email && (
+          <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+        )}
       </div>
 
       <div>
@@ -159,10 +175,14 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           className={`w-full border text-sm mob:text-base px-4 py-3 rounded outline-none focus:ring-1 bg-white resize-none ${
-            errors.message ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-black'
+            errors.message
+              ? 'border-red-500 focus:ring-red-500'
+              : 'border-gray-300 focus:ring-black'
           }`}
         />
-        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+        {errors.message && (
+          <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+        )}
       </div>
 
       <div>
@@ -174,7 +194,9 @@ const ContactForm = () => {
             onChange={handleChange}
             className={`mt-1 w-4 h-4 ${errors.terms ? 'border-red-500' : ''}`}
           />
-          <label className={`leading-tight ${errors.terms ? 'text-red-500' : ''}`}>
+          <label
+            className={`leading-tight ${errors.terms ? 'text-red-500' : ''}`}
+          >
             By clicking this you agree to{' '}
             <a href="#" className="underline hover:text-black">
               terms & conditions
@@ -185,7 +207,9 @@ const ContactForm = () => {
             </a>
           </label>
         </div>
-        {errors.terms && <p className="text-red-500 text-xs mt-1">{errors.terms}</p>}
+        {errors.terms && (
+          <p className="text-red-500 text-xs mt-1">{errors.terms}</p>
+        )}
       </div>
 
       <Button
@@ -201,8 +225,15 @@ const ContactForm = () => {
   )
 }
 
-const BigVideoSection = ({ videos = [], title = "Let's Connect", description = "Have a question? We'd love to hear from you.", contactInfo }) => {
-  const bgImage = videos[0]?.thumbnail || 'https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/yt.png'
+const BigVideoSection = ({
+  videos = [],
+  title = "Let's Connect",
+  description = "Have a question? We'd love to hear from you.",
+  contactInfo,
+}) => {
+  const bgImage =
+    videos[0]?.thumbnail ||
+    'https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/yt.png'
 
   return (
     <section
@@ -213,7 +244,7 @@ const BigVideoSection = ({ videos = [], title = "Let's Connect", description = "
       <div className="relative z-20">
         <div className="flex lg:p-36 flex-col lg:flex-row sm:flex-col-reverse overflow-hidden sm:p-16 sm:py-10 mob:px-5 mob:pt-10 mob:pb-14 mob:flex-col-reverse">
           {/* Left Info */}
-          <div className="sm:p-10 lg:p-20 border-b md:border-b-0 lg:border-r lg:w-[45%] sm:w-full bg-white space-y-6">
+          <div className="sm:p-10 lg:p-20 border-b md:border-b-0 lg:border-r lg:w-[45%] sm:w-full bg-white space-y-6  mob:p-8">
             <h2 className="text-xl sm:text-3xl mob:text-[1.25rem] font-bold text-gray-900 font-heading">
               {title}
             </h2>
@@ -228,7 +259,9 @@ const BigVideoSection = ({ videos = [], title = "Let's Connect", description = "
               </div>
               <div className="flex items-start gap-3 mob:gap-2">
                 <FiSend className="mt-1 text-gray-900 text-lg" />
-                <span>{contactInfo?.email || 'buildindiarealty@gmail.com'}</span>
+                <span>
+                  {contactInfo?.email || 'buildindiarealty@gmail.com'}
+                </span>
               </div>
               <div className="flex items-start gap-3 mob:gap-2">
                 <LocationOnOutlinedIcon className="mt-1 text-gray-900 text-xl" />
