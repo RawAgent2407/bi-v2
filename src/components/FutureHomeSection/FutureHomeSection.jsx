@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Button from '../Button'
 
+// Swiper imports
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { FreeMode, Navigation, Thumbs, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/free-mode'
+import 'swiper/css/navigation'
+import 'swiper/css/thumbs'
+
 const FutureHomeSection = ({ data }) => {
   const location = useLocation()
   const isProjectsPage = location.pathname === '/projects'
@@ -14,19 +22,20 @@ const FutureHomeSection = ({ data }) => {
     description2,
     tabs = [],
   } = data
+
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="bg-whit sm:px-0 lg:px-36  sm:py-10">
+    <section className="bg-whit sm:px-0 lg:px-36 sm:py-10 ">
       <div className="lg:space-y-20 w-full mx-auto">
         {/* Static Cards */}
-        <div className="lg:space-y-10 sm:space-y-10 mob:space-y-5">
+        <div className="lg:space-y-10 sm:space-y-10 mob:space-y-5 mob:mb-20">
           <div className="flex flex-col sm:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8 sm:gap-2 lg:px-0 sm:px-10 mob:px-0 mob:pt-10">
             <h2
               className="
                 lg:text-xl font-heading font-regular text-black
-               lg:pt-[1rem] lg:pb-[0.5rem]
-                sm:text-2xl  sm:pt-[0.5rem] sm:pb-[0.25rem]
+                lg:pt-[1rem] lg:pb-[0.5rem]
+                sm:text-2xl sm:pt-[0.5rem] sm:pb-[0.25rem]
                 mob:text-2xl mob:pt-[0.5rem] mob:pb-[0.25rem] mob:px-5 mob:font-medium mob:mb-4
               "
             >
@@ -41,7 +50,7 @@ const FutureHomeSection = ({ data }) => {
             </p>
           </div>
 
-          <div className="relative lg:rounded-lg overflow-hidden shadow-md h-[400px] sm:h-[500px] flex items-center justify-center">
+          <div className="relative lg:rounded-lg overflow-hidden shadow-md h-[400px] sm:h-[500px] mob:h-[60dvh] flex items-center justify-center ">
             <img
               src={
                 features?.[0]?.image ||
@@ -69,7 +78,7 @@ const FutureHomeSection = ({ data }) => {
 
         {/* Tabs Controlled Section */}
         {!isProjectsPage && (
-          <div className="lg:space-y-10 sm:space-y-10 mob:space-y-5">
+          <div className="lg:space-y-10 sm:space-y-10 mob:space-y-5 mob:mb-20">
             {/* Heading + Description */}
             <div className="flex flex-col sm:px-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-0 sm:px-10 mob:px-0 lg:my-0 sm:my-10 mob:my-10">
               <h2
@@ -90,8 +99,8 @@ const FutureHomeSection = ({ data }) => {
               </p>
             </div>
 
-            {/* Active Image (from active tab) */}
-            <div className="overflow-hidden lg:rounded-lg h-[300px] sm:h-[400px] md:h-[500px] ">
+            {/* Active Image */}
+            <div className="overflow-hidden lg:rounded-lg h-[300px] sm:h-[400px] md:h-[500px] mob:h-[50dvh]">
               <img
                 src={
                   tabs[activeTab]?.image ||
@@ -102,38 +111,57 @@ const FutureHomeSection = ({ data }) => {
               />
             </div>
 
-            {/* Tabs */}
-            <div className="mob:flex mob:overflow-x-auto mob:gap-5 sm:flex sm:overflow-x-auto sm:gap-8 lg:grid lg:grid-cols-4 lg:gap-8 sm:pb-5 mob:pb-5 mob:px-5 sm:px-0">
+            {/* Swiper Tabs with Text */}
+            <Swiper
+              onSlideChange={(swiper) => setActiveTab(swiper.realIndex)}
+              slidesPerView={1.5}
+              spaceBetween={20}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2.75,
+                },
+                1280: {
+                  slidesPerView: 4,
+                },
+              }}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Autoplay]}
+              className="mob:px-5 sm:px-0 sm:pb-5 mob:pb-5 "
+            >
               {tabs.map((item, index) => {
                 const isActive = index === activeTab
                 return (
-                  <div
-                    key={index}
-                    onClick={() => setActiveTab(index)}
-                    className="cursor-pointer transition-all duration-200 group mob:min-w-[300px] sm:min-w-[280px] lg:min-w-0"
-                  >
-                    <h3
-                      className={`text-sm mob:text-lg sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${
-                        isActive
-                          ? 'text-black border-black'
-                          : 'text-gray-400 border-gray-600 group-hover:text-black group-hover:border-black'
-                      }`}
-                    >
-                      {item.name}
-                    </h3>
-                    <p
-                      className={`text-xs mob:text-sm sm:text-sm font-sans ${
-                        isActive
-                          ? 'text-black'
-                          : 'text-gray-500 group-hover:text-gray-700'
-                      }`}
-                    >
-                      {item.description}
-                    </p>
-                  </div>
+                  <SwiperSlide key={index} className="cursor-pointer group mob:ml-5 sm:ml-10 lg:ml-0" onClick={() => setActiveTab(index)}>
+                    <div className="transition-all duration-200">
+                      <h3
+                        className={`text-sm mob:text-lg sm:text-base font-semibold font-heading border-t-2 pt-3 pb-1 ${
+                          isActive
+                            ? 'text-black border-black'
+                            : 'text-gray-400 border-gray-600 group-hover:text-black group-hover:border-black'
+                        }`}
+                      >
+                        {item.name}
+                      </h3>
+                      <p
+                        className={`text-xs mob:text-sm sm:text-sm font-sans ${
+                          isActive
+                            ? 'text-black'
+                            : 'text-gray-500 group-hover:text-gray-700'
+                        }`}
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+                  </SwiperSlide>
                 )
               })}
-            </div>
+            </Swiper>
           </div>
         )}
       </div>

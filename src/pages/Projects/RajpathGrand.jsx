@@ -5,12 +5,11 @@ import ImpactSection from '../../components/ImpactSection/ImpactSection'
 import VisionSection from '../../components/VisionSection/VisionSection'
 import TabsSection from '../../components/TabsSection/TabsSection'
 import BigImgSection from '../../components/BigImgSection/BigImgSection'
-import FutureHomeSection from '../../components/FutureHomeSection/FutureHomeSection'
 import BigVideoSection from '../../components/BigVideoSection/BigVideoSection'
 import DarkFooterSection from '../../components/DarkFooterSection/DarkFooterSection'
 import FooterSection from '../../components/FooterSection/FooterSection'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-
+import FutureHomeSectionProject from '../../components/FutureHomeSectionProject/FutureHomeSectionProject'
 // Import JSON data
 import projectHeroData from '../../data/projects/projectHero.json'
 import impactData from '../../data/projects/impactSection.json'
@@ -43,8 +42,7 @@ function RajpathGrand() {
       {/* <BigImgSection data={bigImgData} /> */}
       <AmenitiesSection />
       <div className="lg:my-10">
-        <FutureHomeSection data={futureHomeData} />
-        <FutureHomeSection data={futureHomeData2} />
+        <FutureHomeSectionProject data={futureHomeData} />
       </div>
       <BigVideoSection data={bigVideoData} />
       <section

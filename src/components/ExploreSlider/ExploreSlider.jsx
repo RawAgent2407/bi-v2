@@ -49,7 +49,7 @@ const ExploreSlider = ({ data }) => {
                 : ''
             } `}
           >
-            <div className="rounded-lg overflow-hidden relative group aspect-square sm:aspect-auto sm:h-[400px] lg:h-[498px] w-full mob:h-[400px] shadow-lg ">
+            <div className="rounded-lg overflow-hidden relative group aspect-square sm:aspect-auto sm:h-[406px] lg:h-[498px] w-full mob:h-[472px] shadow-lg ">
               <img
                 src={item.image}
                 alt={item.title}
@@ -69,13 +69,13 @@ const ExploreSlider = ({ data }) => {
                 <div className="flex flex-col sm:flex-row gap-[0.75rem] mt-2 mob:flex-row mob:gap-[0.5rem] mob:mt-1 lg:w-fit">
                   <Button
                     variant="dark"
-                    className="shadow-md lg:min-w-[180px] sm:flex-1 lg:flex-0 large-btn-flex"
+                    className="shadow-md lg:min-w-[180px] sm:flex-1 lg:flex-0 large-btn-flex mob:flex-1"
                   >
                     <Link to="/projects">Explore More</Link>
                   </Button>
                   <Button
                     variant="light"
-                    className="shadow-md lg:min-w-[180px] sm:flex-1 lg:flex-0 large-btn-flex"
+                    className="shadow-md lg:min-w-[180px] sm:flex-1 lg:flex-0 large-btn-flex mob:flex-1"
                   >
                     <a href="#contact">Contact us</a>
                   </Button>

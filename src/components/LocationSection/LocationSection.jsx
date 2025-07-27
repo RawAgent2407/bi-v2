@@ -4,7 +4,7 @@ const LocationSection = ({ data }) => {
   const { title, locations, stats } = data
 
   return (
-    <section className="bg-white mob:px-5 sm:px-12 lg:px-36 lg:pb-20 ">
+    <section className="bg-white mob:px-5 sm:px-12 lg:px-36 lg:pb-20 mob:pb-10 ">
       <div className=" mx-auto space-y-10">
         {/* Heading for small screens */}
         <h2 className="block lg:hidden text-[1.25rem] mob:text-[1.35rem] leading-[1.75rem] font-[Archivo] font-medium text-gray-900 sm:text-[24px] sm:leading-[28px]">
@@ -49,7 +49,7 @@ const LocationSection = ({ data }) => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="absolute top-0 left-0 w-full h-full"
+            className="absolute top-0 left-0 w-full h-full "
           ></iframe>
 
           {/* Info Card Overlay */}
@@ -77,7 +77,7 @@ const LocationSection = ({ data }) => {
         </div>
 
         {/* Stats for sm and mob only */}
-        <div className="flex lg:gap-10 sm:gap-10 mob:gap-4 text-center lg:hidden mt-4">
+        <div className="flex lg:gap-10 sm:gap-10 mob:gap-4 text-center lg:hidden mt-10">
           <div className="mob:flex-1 mob:flex-col mob:items-start mob:justify-start mob:text-left sm:flex-1 sm:flex-col sm:items-start sm:justify-start sm:text-left">
             <div className="text-[2.2rem] leading-[3rem] text-gray-900 font-medium">
               {stats[0]?.number || '20+'}

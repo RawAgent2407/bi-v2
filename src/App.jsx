@@ -9,7 +9,7 @@ import blogsData from './data/blogsData'
 import About from './pages/About/About'
 import RajpathGrand from './pages/Projects/RajpathGrand'
 import RajpathEnclave from './pages/Projects/RajpathEnclave'
-import RajpathHeights from './pages/Projects/RajpathHeights'
+import GreenCity from './pages/Projects/GreenCity'
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/rajpath-grand" element={<RajpathGrand />} />
         <Route path="/projects/rajpath-enclave" element={<RajpathEnclave />} />
-        <Route path="/projects/rajpath-heights" element={<RajpathHeights />} />
+        <Route path="/projects/green-city" element={<GreenCity />} />
         <Route path="/blog" element={<Blog />} />
         <Route
           path="/blog/:id"

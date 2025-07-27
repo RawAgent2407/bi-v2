@@ -4,23 +4,23 @@ import ProjectHero from '../../components/ProjectHero/ProjectHero'
 import ImpactSection from '../../components/ImpactSection/ImpactSection'
 import VisionSection from '../../components/VisionSection/VisionSection'
 import TabsSection from '../../components/TabsSection/TabsSection'
-import FutureHomeSection from '../../components/FutureHomeSection/FutureHomeSection'
+import FutureHomeSectionProject from '../../components/FutureHomeSectionProject/FutureHomeSectionProject'
 import BigVideoSection from '../../components/BigVideoSection/BigVideoSection'
 import DarkFooterSection from '../../components/DarkFooterSection/DarkFooterSection'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 // Import JSON data
-import projectHeroData from '../../data/projects/projectHero.json'
-import impactData from '../../data/projects/impactSection.json'
-import visionData from '../../data/projects/visionSection.json'
-import tabsData from '../../data/projects/tabsSection.json'
-import futureHomeData from '../../data/projects/futureHomeSection.json'
-import futureHomeData2 from '../../data/projects/futureHomeSection2.json'
-import bigVideoData from '../../data/projects/bigVideoSection.json'
+import projectHeroData from '../../data/GreenCity/projectHero.json'
+import impactData from '../../data/GreenCity/impactSection.json'
+import visionData from '../../data/GreenCity/visionSection.json'
+import tabsData from '../../data/GreenCity/tabsSection.json'
+import futureHomeData from '../../data/GreenCity/futureHomeSection.json'
+import futureHomeData2 from '../../data/GreenCity/futureHomeSection2.json'
+import bigVideoData from '../../data/GreenCity/bigVideoSection.json'
 import navData from '../../data/shared/nav.json'
 import AmenitiesSection from '../../components/AmenitiesSection'
 
-function RajpathHeights() {
+function  GreenCity() {
   return (
     <>
       <a
@@ -39,8 +39,7 @@ function RajpathHeights() {
       <TabsSection data={tabsData} />
       <AmenitiesSection />
       <div className="lg:my-10">
-        <FutureHomeSection data={futureHomeData} />
-        <FutureHomeSection data={futureHomeData2} />
+        <FutureHomeSectionProject data={futureHomeData} />
       </div>
       <BigVideoSection data={bigVideoData} />
       <section
@@ -53,4 +52,4 @@ function RajpathHeights() {
   )
 }
 
-export default RajpathHeights
+export default GreenCity

@@ -61,12 +61,12 @@
     {
       "id": 3,
       "image": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/home-slider/slide-3.jpg",
-      "title": "Rajpath Heights",
+      "title": "Green City",
       "location": "Dholera",
       "price": "₹ 3.8-7.2Cr",
       "link": "Modern Amenities",
       "overlayText": "Premium Residences",
-      "url": "/projects/rajpath-heights"
+      "url": "/projects/green-city"
     }
   ]
 }

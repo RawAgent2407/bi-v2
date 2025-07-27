@@ -25,9 +25,9 @@ const ProjectHero = ({ data }) => {
     font-[Archivo] font-normal
     mb-4 
     mob:text-[2.5rem]
-    sm:w-full
+    sm:w-[70%]
     mob:w-full
-    lg:w-full
+    lg:w-[60%]
         "
         >
           {title}

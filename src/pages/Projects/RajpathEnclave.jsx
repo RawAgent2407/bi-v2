@@ -4,7 +4,7 @@ import ProjectHero from '../../components/ProjectHero/ProjectHero'
 import ImpactSection from '../../components/ImpactSection/ImpactSection'
 import VisionSection from '../../components/VisionSection/VisionSection'
 import TabsSection from '../../components/TabsSection/TabsSection'
-import FutureHomeSection from '../../components/FutureHomeSection/FutureHomeSection'
+import FutureHomeSectionProject from '../../components/FutureHomeSectionProject/FutureHomeSectionProject'
 import BigVideoSection from '../../components/BigVideoSection/BigVideoSection'
 import DarkFooterSection from '../../components/DarkFooterSection/DarkFooterSection'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
@@ -19,6 +19,7 @@ import futureHomeData2 from '../../data/RajpathEnclave/futureHomeSection2.json'
 import bigVideoData from '../../data/RajpathEnclave/bigVideoSection.json'
 import navData from '../../data/shared/nav.json'
 import AmenitiesSection from '../../components/AmenitiesSection'
+import BigImgSection from '../../components/BigImgSection/BigImgSection'
 
 function RajpathEnclave() {
   return (
@@ -37,10 +38,11 @@ function RajpathEnclave() {
       <ImpactSection data={impactData} />
       <VisionSection data={visionData} />
       <TabsSection data={tabsData} />
+     
       <AmenitiesSection />
       <div className="lg:my-10">
-        <FutureHomeSection data={futureHomeData} />
-        <FutureHomeSection data={futureHomeData2} />
+        <FutureHomeSectionProject data={futureHomeData} />
+        {/* <FutureHomeSection data={futureHomeData2} /> */}
       </div>
       <BigVideoSection data={bigVideoData} />
       <section
