@@ -1,12 +1,12 @@
 {
-  "title": " Aaa che Bijo Project",
-  "subtitle": "Your dream home in Dholera Smart City is within reach. Secure your plot today and take the first step toward a brighter future.",
+  "title": "Rajpath Enclave",
+  "subtitle": "A blend of architectural elegance and strategic location, It stands as a testament to our vision for smarter living. Surrounded by modern infrastructure and natural beauty.",
   "description": "",
-  "img": "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/refs/heads/main/bi-reality/final-bi-imgs/home-slider/slide-1.png",
+  "img": "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/projects/re/1.jpeg",
   "stats": [
     {
       "id": 1,
-      "number": "100+",
+      "number": "150+",
       "label": "Skilled Professionals"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
       "id": 3,
-      "number": "200+",
+      "number": "100+",
       "label": "Families Registered"
     }
   ]

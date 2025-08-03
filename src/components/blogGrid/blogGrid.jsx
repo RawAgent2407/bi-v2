@@ -41,9 +41,9 @@ const SingleBlog = ({ blogsData }) => {
         <aside className="lg:w-1/5 w-full mb-8 lg:mb-0">
           <div className="lg:sticky top-20">
             <div className="text-xs leading-5 text-gray-700 space-y-1 mb-6">
-              <div className="font-semibold">Explore RAV Group</div>
-              <div>Explore Dholera SIR</div>
-              <div>Take A Virtual Tour Of Our Projects</div>
+              <a href="https://www.ravgroup.org/" target="_blank" rel="noopener noreferrer" className="block font-semibold hover:underline">Explore RAV Group</a>
+              <a href="https://dholera.gujarat.gov.in/about_us#dholera_sir" target="_blank" rel="noopener noreferrer" className="block hover:underline">Explore Dholera SIR</a>
+              <a href="https://buildindiagroup.co.in/#/login" target="_blank" rel="noopener noreferrer" className="block hover:underline">Take A Virtual Tour Of Our Projects</a>
               <div>Learn More</div>
             </div>
             <div className="flex gap-4 text-xl text-gray-800">
@@ -183,42 +183,10 @@ const BlogGrid = () => {
     generateBlogPosts()
   }, [])
 
-  const tags = [
-    'All',
-    'Foundational topics',
-    'Research and Engineering',
-    'Product',
-    'Developers',
-    'Announcements',
-    'Understanding World',
-    'Policy',
-    'How To',
-  ]
-
   return (
     <section className="w-full sm:px-10 lg:px-36 py-10 bg-white mob:px-5 mob:py-10 sm:px-10">
-      <div className="mx-auto flex flex-col lg:flex-row gap-10">
-        {/* Left Sticky Tags */}
-        <aside className="lg:w-1/5 w-full">
-          <div className="lg:sticky top-20">
-            <div className="flex flex-wrap gap-3">
-              {tags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className={`px-4 py-1 rounded-full text-sm font-medium cursor-pointer transition ${
-                    idx === 0
-                      ? 'bg-black text-white'
-                      : 'bg-gray-100 text-gray-800 hover:bg-black hover:text-white'
-                  }`}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </aside>
-
-        <div className="lg:w-4/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-14">
+      <div className="mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-14">
           {loading && (
             <div className="sm:col-span-2 lg:col-span-2 text-center py-10">
               <p>Generating blog posts...</p>

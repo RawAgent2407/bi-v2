@@ -7,9 +7,11 @@ import Blog from './pages/blog/blog'
 import { SingleBlog } from './components/blogGrid/blogGrid'
 import blogsData from './data/blogsData'
 import About from './pages/About/About'
+import Admin from './pages/Admin/Admin'
 import RajpathGrand from './pages/Projects/RajpathGrand'
 import RajpathEnclave from './pages/Projects/RajpathEnclave'
 import GreenCity from './pages/Projects/GreenCity'
+import ChatBubblePopup from './components/ChatBubblePopup';
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
           element={<SingleBlog blogsData={blogsData} />}
         />
         <Route path="/about" element={<About />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
+      <ChatBubblePopup/>
     </BrowserRouter>
   )
 }
