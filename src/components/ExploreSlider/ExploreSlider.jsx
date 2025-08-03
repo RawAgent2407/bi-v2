@@ -3,9 +3,10 @@ import 'keen-slider/keen-slider.min.css'
 import { KeenSliderPlugin, useKeenSlider } from 'keen-slider/react'
 import Button from '../Button'
 import './ExploreSlider.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const ExploreSlider = ({ data }) => {
+  const location = useLocation()
   const { projects } = data
   const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -43,7 +44,9 @@ const ExploreSlider = ({ data }) => {
             key={item.id}
             className={`keen-slider__slide${
               idx === 0
-                ? ' mob:pl-5 sm:pl-10 lg:pl-10'
+                ? location.pathname === '/about'
+                  ? ' mob:pl-5 sm:pl-10 lg:pl-36'
+                  : ' mob:pl-5 sm:pl-10 lg:pl-10'
                 : idx === projects.length - 1
                 ? ' mob:pr-5 sm:pr-10 lg:pr-10'
                 : ''
