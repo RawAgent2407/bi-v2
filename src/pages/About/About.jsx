@@ -22,7 +22,7 @@ import navData from '../../data/shared/nav.json'
 const About = () => {
   return (
     <>
-      <a
+      {/* <a
         href="https://wa.me/+919898339903"
         target="_blank"
         rel="noopener noreferrer"
@@ -30,7 +30,7 @@ const About = () => {
         aria-label="Chat on WhatsApp"
       >
         <WhatsAppIcon sx={{ fontSize: 28 }} />
-      </a>
+      </a> */}
       <Nav data={navData} />
       <ProjectHero data={projectHeroData} />
       <ImpactSection data={impactData} />
@@ -38,7 +38,7 @@ const About = () => {
       <AboutImgs data={aboutImgsData} />
       <ExploreSlider data={exploreSliderData} />
       <section className="footer-wrapper lg:pt-20   lg:p-20" id="contact">
-        <ContactSection data={contactData} />
+        {/* <ContactSection data={contactData} /> */}
         <FooterSection data={footerData} />
       </section>
     </>

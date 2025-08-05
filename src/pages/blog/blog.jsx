@@ -20,7 +20,7 @@ function Blog() {
       <BlogHero data={blogHeroData} />
       <BlogGrid data={blogGridData} />
       <section className="footer-wrapper lg:pt-20   lg:p-20" id="contact">
-        <ContactSection data={contactData} />
+        {/* <ContactSection data={contactData} /> */}
         <FooterSection data={footerData} />
       </section>
     </div>

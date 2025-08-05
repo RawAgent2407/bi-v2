@@ -312,15 +312,14 @@ const Nav = ({ data }) => {
           <div className="relative flex items-center justify-between h-16">
             {/* Left: Logo */}
             <div className="flex-shrink-0">
-              <Link
-                to="/"
-                className={`text-2xl font-bold tracking-tight font-heading transition-colors duration-300 ${
-                  isScrolled || isMobileMenuOpen || isBlogPage
-                    ? 'text-[#323232]'
-                    : 'text-white'
-                }`}
-              >
-                {logo?.text || 'Build India'}
+              <Link to="/" className="flex items-center">
+                <img 
+                  src={isScrolled || isMobileMenuOpen || isBlogPage 
+                    ? 'https://raw.githubusercontent.com/RawAgent2407/bi-realty/main/public/images/photos/home/logo_w.png' 
+                    : 'https://raw.githubusercontent.com/RawAgent2407/bi-realty/main/public/images/photos/home/logo_b.png'} 
+                  alt={logo?.text || 'Build India'} 
+                  className="h-24 w-auto object-contain"
+                />
               </Link>
             </div>
 

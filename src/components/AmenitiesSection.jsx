@@ -1,23 +1,23 @@
 import React from 'react'
 
-import amt01 from '../assets/amt/amt_01.png'
-import amt02 from '../assets/amt/amt_02.png'
-import amt03 from '../assets/amt/amt_03.png'
-import amt04 from '../assets/amt/amt_04.png'
-import amt05 from '../assets/amt/amt_05.png'
-import amt06 from '../assets/amt/amt_06.png'
-import amt07 from '../assets/amt/amt_07.png'
-import amt08 from '../assets/amt/amt_08.png'
+const amt01 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/1.jpg"
+const amt02 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/2.jpg"
+const amt03 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/3.jpg"
+const amt04 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/4.jpg"
+const amt05 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/5.jpg"
+const amt06 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/6.jpg"
+const amt07 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/7.jpg"
+const amt08 = "https://raw.githubusercontent.com/RawAgent2407/bi-realty/refs/heads/main/public/images/photos/amenities/8.jpg"
 
 const amenities = [
-  { label: 'Free WiFi', img: amt01 },
-  { label: 'Swimming Pool', img: amt02 },
-  { label: 'Spa & Wellness', img: amt03 },
-  { label: 'Fitness Center', img: amt04 },
-  { label: 'Restaurant', img: amt05 },
-  { label: 'Parking', img: amt06 },
-  { label: 'Room Service', img: amt07 },
-  { label: 'Bar & Lounge', img: amt08 },
+  { label: 'Swimming Pool', img: amt01 },
+  { label: 'Garden', img: amt02 },
+  { label: 'Play Area', img: amt03 },
+  { label: 'Restaurant', img: amt04 },
+  { label: 'Fitness Center', img: amt05 },
+  { label: 'Pond', img: amt06 },
+  { label: 'Fountain', img: amt07 },
+  { label: 'Club House', img: amt08 },
 ]
 
 const AmenitiesSection = () => {

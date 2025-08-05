@@ -99,7 +99,7 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="contact-form space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:gap-4 sm:gap-2 mob:gap-3">
         <div>
           <input

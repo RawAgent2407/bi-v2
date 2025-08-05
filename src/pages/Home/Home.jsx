@@ -25,7 +25,7 @@ const Home = () => {
     <div className="bg-white font-sans text-gray-900">
       {/* Navbar */}
       {/* WhatsApp Floating Button */}
-      <a
+      {/* <a
         href="https://wa.me/+919898339903"
         target="_blank"
         rel="noopener noreferrer"
@@ -33,7 +33,7 @@ const Home = () => {
         aria-label="Chat on WhatsApp"
       >
         <WhatsAppIcon sx={{ fontSize: 28 }} />
-      </a>
+      </a> */}
 
       <Nav data={navData} />
 
